@@ -1,6 +1,9 @@
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Polygon;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.*;
 
 import org.openstreetmap.gui.jmapviewer.*;
@@ -24,8 +27,6 @@ public class JMaps extends JFrame implements JMapViewerEventListener  {
     private JLabel mperpLabelName=null;
     private JLabel mperpLabelValue = null;
     private JLabel tempLabel = null;
-
-    private Double x,y;
 
     public JMaps() {
         super("First map app");
@@ -84,8 +85,14 @@ public class JMaps extends JFrame implements JMapViewerEventListener  {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (e.getButton() == MouseEvent.BUTTON1) {
-                    map.getMapPosition(40, 10);
-                    // map.setDisplayPositionByLatLon(x, y, map.getZoom());
+
+
+                    Point p = new Point(e.getX(), e.getY());
+                    Coordinate coord = map.getPosition(p);
+                    tempLabel.setText(String.format("%s _ %s", coord.getLat(), coord.getLon()));
+                    map.setDisplayPositionByLatLon(coord.getLat(), coord.getLon(), map.getZoom());
+
+
                     map.getAttribution().handleAttribution(e.getPoint(), true);
                 }
             }
