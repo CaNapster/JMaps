@@ -6,22 +6,21 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba4d7596-9ef7-4042-af23-919462eed5f9" name="Default" comment="two sync Scrolls">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/componentListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/miglayout_4_0_swing.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/scrollStateChanged.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JMaps.iml" afterPath="$PROJECT_DIR$/JMaps.iml" />
+    <list default="true" id="ba4d7596-9ef7-4042-af23-919462eed5f9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/keyListener.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mouseListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMaps.java" afterPath="$PROJECT_DIR$/src/JMaps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/JMaps_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/JMaps_jar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JMaps.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364926750915" ignored="false" />
+    <file path="/Dummy.txt" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364935242893" ignored="false" />
     <file path="/fragment.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364297865038" ignored="false" />
-    <file path="/JMaps.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364935009460" ignored="false" />
-    <file path="/scrollStateChanged.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364926807077" ignored="false" />
+    <file path="/JMaps.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364937789146" ignored="false" />
+    <file path="/scrollStateChanged.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364936624224" ignored="false" />
     <file path="/componentListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364934958130" ignored="false" />
+    <file path="/keyListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364936927744" ignored="false" />
+    <file path="/mouseListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364937874441" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,10 +79,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JMaps.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="JMaps.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JMaps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="46" selection-start="139" selection-end="139" vertical-scroll-proportion="0.28099173">
+            <state line="15" column="34" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,26 +90,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="componentListener.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/componentListener.java">
+      <file leaf-file-name="mouseListener.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/mouseListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="25" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0">
+            <state line="15" column="80" selection-start="403" selection-end="403" vertical-scroll-proportion="0.49468085">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#componentMoved#0;class#componentListener#0" expanded="false" />
-                <element signature="method#componentShown#0;class#componentListener#0" expanded="false" />
-                <element signature="method#componentHidden#0;class#componentListener#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scrollStateChanged.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scrollStateChanged.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="49" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#mouseReleased#0;class#mouseListener#0" expanded="false" />
+                <element signature="method#mouseExited#0;class#mouseListener#0" expanded="false" />
+                <element signature="method#mousePressed#0;class#mouseListener#0" expanded="false" />
+                <element signature="method#mouseEntered#0;class#mouseListener#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -134,9 +123,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/scrollStateChanged.java" />
         <option value="$PROJECT_DIR$/src/componentListener.java" />
+        <option value="$PROJECT_DIR$/src/scrollStateChanged.java" />
+        <option value="$PROJECT_DIR$/src/keyListener.java" />
         <option value="$PROJECT_DIR$/src/JMaps.java" />
+        <option value="$PROJECT_DIR$/src/mouseListener.java" />
       </list>
     </option>
   </component>
@@ -394,7 +385,11 @@
       <created>1364925419511</created>
       <updated>1364925419511</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="MigLayered + Scrolls">
+      <created>1364935249877</created>
+      <updated>1364935249877</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -465,7 +460,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="two sync Scrolls" />
+    <option name="LAST_COMMIT_MESSAGE" value="MigLayered + Scrolls" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -481,6 +476,7 @@
     <MESSAGE value="Demo Deleted" />
     <MESSAGE value="Lat&amp;Lon works!" />
     <MESSAGE value="two sync Scrolls" />
+    <MESSAGE value="MigLayered + Scrolls" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -490,24 +486,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/JMaps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="0" selection-start="2712" selection-end="2712" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JMaps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="46" selection-start="3903" selection-end="3903" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JMaps.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="98" column="78" selection-start="3340" selection-end="3340" vertical-scroll-proportion="0.0">
@@ -590,15 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scrollStateChanged.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="49" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_17/src.zip!/java/awt/event/ComponentListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="72" column="16" selection-start="1921" selection-end="1921" vertical-scroll-proportion="2.2154255">
@@ -608,7 +577,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/componentListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0">
+        <state line="14" column="14" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#componentMoved#0;class#componentListener#0" expanded="false" />
@@ -618,11 +587,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JMaps.java">
+    <entry file="file://$PROJECT_DIR$/src/scrollStateChanged.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="46" selection-start="139" selection-end="139" vertical-scroll-proportion="0.28099173">
+        <state line="16" column="61" selection-start="609" selection-end="609" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/keyListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.09042553">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#keyListener#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#keyListener#0" expanded="false" />
+            <element signature="method#keyTyped#0;class#keyListener#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JMaps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="34" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mouseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="80" selection-start="403" selection-end="403" vertical-scroll-proportion="0.49468085">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#mouseReleased#0;class#mouseListener#0" expanded="false" />
+            <element signature="method#mouseExited#0;class#mouseListener#0" expanded="false" />
+            <element signature="method#mousePressed#0;class#mouseListener#0" expanded="false" />
+            <element signature="method#mouseEntered#0;class#mouseListener#0" expanded="false" />
           </folding>
         </state>
       </provider>
