@@ -11,8 +11,13 @@ import javax.swing.event.ChangeListener;
 public class scrollStateChanged implements ChangeListener {
     @Override
     public void stateChanged(ChangeEvent e) {
-            JMaps.scrollPane1.getHorizontalScrollBar().setValue(JMaps.scrollPane2.getHorizontalScrollBar().getValue());
-    JMaps.scrollPane1.getVerticalScrollBar().setValue(JMaps.scrollPane2.getVerticalScrollBar().getValue());
-    JMaps.frame.repaint();
+        GUI.scrollPane1SetValueHScrollBar(GUI.scrollPane2getValueHScrollBar());
+        GUI.scrollPane1SetValueVScrollBar(GUI.scrollPane2getValueVScrollBar());
+        GUI.repaintMainFrame();
+    }
+    static public void stateChange() {
+        GUI.scrollPane1SetValueHScrollBar(GUI.scrollPane2getValueHScrollBar());
+        GUI.scrollPane1SetValueVScrollBar(GUI.scrollPane2getValueVScrollBar());
+        GUI.repaintMainFrame();
     }
 }
