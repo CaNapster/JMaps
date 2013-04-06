@@ -21,8 +21,7 @@ public class GUI {
     private static ImageIcon imageIcon;
     private String IMG_PATH = "result.png";
 
-    public GUI(String frameName)
-    {
+    public GUI(String frameName){
         frame = new JFrame(frameName){{
             setMinimumSize(new Dimension(500, 500));
             setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
