@@ -49,9 +49,32 @@ public class CustomPainting {
         if (str.length() > 0)
         g.drawString(str.toString(), center.x + 10, center.y);
     }
-
     public static void paintLine(Graphics2D g, Color color, Point begin, Point end){
         g.setColor(color);
         g.drawLine(begin.x, begin.y, end.x, end.y);
+    }
+    public static void fullGraphRepaint(Graphics2D g2, ArrayList<RoadGraph> list){
+        g2.setComposite(AlphaComposite.DstOut);
+        g2.setColor(new Color(0,0,0,1f));
+        g2.fillRect(0,0,GUI.getBufferedImageSize().width, GUI.getBufferedImageSize().height);
+        g2.setComposite(AlphaComposite.SrcOver);
+
+        for (RoadGraph i: list){
+            for (Integer j: i.getList()){
+                for (RoadGraph k: list){
+                    if (k.getNumber() == j){
+                        paintLine(g2, Color.black, i.getPoint(), k.getPoint());
+                        break;
+                    }
+                }
+            }
+        }
+
+        for (RoadGraph i: list){
+            paintVertexDebug(g2, Color.red, i.getPoint(), RoadGraph.getDrawSize(), i.getNumber(), i.getList());
+        }
+        scrollStateChanged.stateChange();
+        GUI.repaintLabel();
+        GUI.repaintScrollPane2();
     }
 }

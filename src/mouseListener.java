@@ -20,28 +20,9 @@ public class mouseListener implements MouseListener {
         RoadGraph.setDrawSize(20);
         if (e.isAltDown()){
             JMaps.addRoadGraphList(new RoadGraph(i, e.getPoint()));
-            CustomPainting.paintVertex(GUI.get2DGraphicsBufferedImage(),
-                    Color.red, e.getPoint(),
-                    RoadGraph.getDrawSize(),
-                    JMaps.getRoadGraphList().get(JMaps.getRoadGraphList().size()-1).getNumber());
             i++;
         }
-        if (e.isControlDown()){
-//            GUI.get2DGraphicsBufferedImage().setComposite(AlphaComposite.DstOut);
-//            GUI.get2DGraphicsBufferedImage().setColor(new Color(0,0,0,1f));
-//            GUI.get2DGraphicsBufferedImage().fillRect(0,0,500, 500);
-//            GUI.get2DGraphicsBufferedImage().setComposite(AlphaComposite.DstOver);
-
-            for (RoadGraph i: JMaps.getRoadGraphList()){
-                CustomPainting.paintVertexDebug(GUI.get2DGraphicsBufferedImage(), Color.red, i.getPoint(),
-                        RoadGraph.getDrawSize(), i.getNumber(), i.getList());
-            }
-        }
-        GUI.repaintScrollPane1();
-        GUI.repaintScrollPane2();
-
-        scrollStateChanged.stateChange();
-        GUI.repaintLabel();
+        CustomPainting.fullGraphRepaint(GUI.get2DGraphicsBufferedImage(), JMaps.getRoadGraphList());
     }
     @Override
     public void mouseReleased(MouseEvent e)
@@ -49,16 +30,15 @@ public class mouseListener implements MouseListener {
         if (e.isShiftDown()){
             for(RoadGraph i: JMaps.getRoadGraphList()){
                 if (i.getPoint().x >= e.getPoint().x-RoadGraph.getDrawSize() && i.getPoint().x <= e.getPoint().x+RoadGraph.getDrawSize())
-                    if (i.getPoint().y >= e.getPoint().y-RoadGraph.getDrawSize() && i.getPoint().y <= e.getPoint().y+RoadGraph.getDrawSize())
-                        if (i != vertex1 && vertex1!=null){
-                            vertex1.addToList(i.getNumber());
-                            i.addToList(vertex1.getNumber());
-                            CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(), Color.black, vertex1.getPoint(), i.getPoint());
-                            vertex1 = null;
-                            scrollStateChanged.stateChange();
-                            GUI.repaintLabel();
-                            GUI.repaintScrollPane2();
-                        }
+                    if (i.getPoint().y >= e.getPoint().y-RoadGraph.getDrawSize() && i.getPoint().y <= e.getPoint().y+RoadGraph.getDrawSize()){
+                        if (i.getList().lastIndexOf(vertex1.getNumber()) == -1)
+                            if (i != vertex1 && vertex1!=null){
+                                vertex1.addToList(i.getNumber());
+                                i.addToList(vertex1.getNumber());
+                                CustomPainting.fullGraphRepaint(GUI.get2DGraphicsBufferedImage(), JMaps.getRoadGraphList());
+                                vertex1 = null;
+                            }
+                    }
             }
         }
     }
@@ -84,32 +64,3 @@ public class mouseListener implements MouseListener {
 
     }
 }
-
-/*
-  public void mouseClicked(MouseEvent e){
-        if (e.isAltDown()){
-            //GUI.get2DGraphicsBufferedImage().drawImage(img, e.getX()-3, e.getY()-img.getHeight(null), null);
-        }
-    }
-//            p.add(e.getPoint());
-//            if (j == 3){
-//                j=0;
-//                bp.add(new BuildingsPointer(p));
-//                p.clear();
-//                System.out.print("added");
-//            } else j++;
-//        }
-//        if (e.isControlDown()) {
-//            for (int i=0; i<bp.size(); i++)
-//                //for (int j=0; j<bp.get(i).getArrPoint().length; j++)
-//                    //System.out.println(bp.get(i).getArrPoint());
-//                CustomPainting.paintCustomRect(GUI.get2DGraphicsBufferedImage(), Color.red, bp.get(i).getArrPoint());
-//            scrollStateChanged.stateChange();
-//            GUI.repaintLabel();
-//            GUI.repaintScrollPane2();
-//    }
-//        System.out.println(String.format("test^  %d,%d", e.getX(),e.getY()));
-//    }
-
-
-*/
