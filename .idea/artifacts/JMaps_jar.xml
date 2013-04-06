@@ -4,6 +4,7 @@
     <root id="archive" name="JMaps.jar">
       <element id="module-output" name="JMaps" />
       <element id="file-copy" path="$PROJECT_DIR$/src/JMaps.java" />
+      <element id="library" level="project" name="miglayout-4.0-swing" />
     </root>
   </artifact>
 </component>

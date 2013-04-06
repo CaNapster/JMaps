@@ -3,6 +3,7 @@ import com.sun.javafx.binding.StringFormatter;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.GeneralPath;
+import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -34,6 +35,21 @@ public class CustomPainting {
         g.setColor(Color.black);
         g.drawString(String.valueOf(name), center.x, center.y);
     }
+    public static void paintVertexDebug(Graphics2D g, Color color, Point center, int d, int name, ArrayList<Integer> list){
+        Ellipse2D.Double circle = new Ellipse2D.Double(center.x-d/2, center.y-d/2, d, d);
+        g.setColor(color);
+        g.fill(circle);
+        g.setColor(Color.black);
+        g.drawString(String.valueOf(name), center.x, center.y);
+        StringBuilder str = new StringBuilder("");
+        for (int i: list){
+            str.append(", ");
+            str.append(i);
+        }
+        if (str.length() > 0)
+        g.drawString(str.toString(), center.x + 10, center.y);
+    }
+
     public static void paintLine(Graphics2D g, Color color, Point begin, Point end){
         g.setColor(color);
         g.drawLine(begin.x, begin.y, end.x, end.y);

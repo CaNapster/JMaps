@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.geom.Rectangle2D;
 
 /**
 * Created with IntelliJ IDEA.
@@ -19,12 +20,28 @@ public class mouseListener implements MouseListener {
         RoadGraph.setDrawSize(20);
         if (e.isAltDown()){
             JMaps.addRoadGraphList(new RoadGraph(i, e.getPoint()));
-            CustomPainting.paintVertex(GUI.get2DGraphicsBufferedImage(), Color.red, e.getPoint(), RoadGraph.getDrawSize(), i);
+            CustomPainting.paintVertex(GUI.get2DGraphicsBufferedImage(),
+                    Color.red, e.getPoint(),
+                    RoadGraph.getDrawSize(),
+                    JMaps.getRoadGraphList().get(JMaps.getRoadGraphList().size()-1).getNumber());
             i++;
-            scrollStateChanged.stateChange();
-            GUI.repaintLabel();
-            GUI.repaintScrollPane2();
         }
+        if (e.isControlDown()){
+//            GUI.get2DGraphicsBufferedImage().setComposite(AlphaComposite.DstOut);
+//            GUI.get2DGraphicsBufferedImage().setColor(new Color(0,0,0,1f));
+//            GUI.get2DGraphicsBufferedImage().fillRect(0,0,500, 500);
+//            GUI.get2DGraphicsBufferedImage().setComposite(AlphaComposite.DstOver);
+
+            for (RoadGraph i: JMaps.getRoadGraphList()){
+                CustomPainting.paintVertexDebug(GUI.get2DGraphicsBufferedImage(), Color.red, i.getPoint(),
+                        RoadGraph.getDrawSize(), i.getNumber(), i.getList());
+            }
+        }
+        GUI.repaintScrollPane1();
+        GUI.repaintScrollPane2();
+
+        scrollStateChanged.stateChange();
+        GUI.repaintLabel();
     }
     @Override
     public void mouseReleased(MouseEvent e)

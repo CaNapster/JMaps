@@ -4,13 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-/**
- * Created with IntelliJ IDEA.
- * User: napster
- * Date: 4/3/13
- * Time: 2:40 PM
- * To change this template use File | Settings | File Templates.
- */
 public class GUI {
     private static JLayeredPane layeredPane;
     private static JScrollPane scrollPane1;
@@ -18,6 +11,7 @@ public class GUI {
     private static JFrame frame;
     private static JLabel label;
     private static BufferedImage bufferedImage;
+    private static Graphics2D graphics2D;
     private static ImageIcon imageIcon;
     private String IMG_PATH = "result.png";
 
@@ -50,6 +44,7 @@ public class GUI {
         scrollPane2.getHorizontalScrollBar().setUnitIncrement(60);
         scrollPane2.getViewport().setOpaque(false);
         bufferedImage = new BufferedImage(imageIcon.getIconWidth(), imageIcon.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
+        graphics2D = bufferedImage.createGraphics();
 
         label = new JLabel(new ImageIcon(bufferedImage));
         scrollPane2.getViewport().setBackground(new Color(0,0,0,0.0f));
@@ -71,11 +66,14 @@ public class GUI {
     public static void repaintScrollPane2() {
         scrollPane2.repaint();
     }
+    public static void repaintScrollPane1() {
+        scrollPane1.repaint();
+    }
     public static void repaintLabel(){
         GUI.label.repaint();
     }
     public static Graphics2D get2DGraphicsBufferedImage(){
-        return GUI.bufferedImage.createGraphics();
+        return GUI.graphics2D;
     }
     public static void scrollBothPaneH(String str, int delta) {
         if (str =="inc") {
@@ -129,5 +127,8 @@ public class GUI {
     }
     public static Integer scrollPane2getValueVScrollBar(){
         return scrollPane2.getVerticalScrollBar().getValue();
+    }
+    public static Dimension getBufferedImageSize(){
+        return new Dimension(GUI.bufferedImage.getWidth(), GUI.bufferedImage.getHeight());
     }
 }
