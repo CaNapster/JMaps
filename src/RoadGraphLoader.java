@@ -220,7 +220,7 @@ public class RoadGraphLoader {
         JMaps.addRoadGraphList(new RoadGraph(205, new Point(1498,543), new ArrayList<Integer>(Arrays.asList(295, 349, 358)),true));
         JMaps.addRoadGraphList(new RoadGraph(206, new Point(1272,664), new ArrayList<Integer>(Arrays.asList(322, 203, 321)),true));
         JMaps.addRoadGraphList(new RoadGraph(207, new Point(911,682), new ArrayList<Integer>(Arrays.asList(310, 318)),true));
-        JMaps.addRoadGraphList(new RoadGraph(208, new Point(926,787), new ArrayList<Integer>(Arrays.asList(314, 310)),true));
+        JMaps.addRoadGraphList(new RoadGraph(208, new Point(926,787), new ArrayList<Integer>(Arrays.asList(314, 309, 310)),true));
         JMaps.addRoadGraphList(new RoadGraph(209, new Point(1268,771), new ArrayList<Integer>(Arrays.asList(323, 322, 317)),true));
         JMaps.addRoadGraphList(new RoadGraph(210, new Point(1245,1925), new ArrayList<Integer>(Arrays.asList(391, 392, 236, 462)),true));
         JMaps.addRoadGraphList(new RoadGraph(211, new Point(1252,1610), new ArrayList<Integer>(Arrays.asList(389, 400, 387)),true));
@@ -263,8 +263,7 @@ public class RoadGraphLoader {
         JMaps.addRoadGraphList(new RoadGraph(248, new Point(1294,3567), new ArrayList<Integer>(Arrays.asList(249, 250, 509)),true));
         JMaps.addRoadGraphList(new RoadGraph(249, new Point(1408,3592), new ArrayList<Integer>(Arrays.asList(23, 248, 510)),true));
         JMaps.addRoadGraphList(new RoadGraph(250, new Point(1179,3543), new ArrayList<Integer>(Arrays.asList(248, 514)),true));
-        JMaps.addRoadGraphList(new RoadGraph(251, new Point(746,356), new ArrayList<Integer>(Arrays.asList(252)),false));
-        JMaps.addRoadGraphList(new RoadGraph(252, new Point(742,323), new ArrayList<Integer>(Arrays.asList(253, 251)),true));
+        JMaps.addRoadGraphList(new RoadGraph(252, new Point(742,323), new ArrayList<Integer>(Arrays.asList(253)),true));
         JMaps.addRoadGraphList(new RoadGraph(253, new Point(717,83), new ArrayList<Integer>(Arrays.asList(252, 254, 281)),true));
         JMaps.addRoadGraphList(new RoadGraph(254, new Point(712,53), new ArrayList<Integer>(Arrays.asList(280, 253)),true));
         JMaps.addRoadGraphList(new RoadGraph(255, new Point(1117,42), new ArrayList<Integer>(Arrays.asList(278, 259)),true));
@@ -320,7 +319,7 @@ public class RoadGraphLoader {
         JMaps.addRoadGraphList(new RoadGraph(306, new Point(804,760), new ArrayList<Integer>(Arrays.asList(305, 307)),false));
         JMaps.addRoadGraphList(new RoadGraph(307, new Point(810,832), new ArrayList<Integer>(Arrays.asList(306, 183)),false));
         JMaps.addRoadGraphList(new RoadGraph(308, new Point(877,910), new ArrayList<Integer>(Arrays.asList(183, 184)),false));
-        JMaps.addRoadGraphList(new RoadGraph(309, new Point(932,845), new ArrayList<Integer>(Arrays.asList(184)),false));
+        JMaps.addRoadGraphList(new RoadGraph(309, new Point(932,845), new ArrayList<Integer>(Arrays.asList(184, 208)),false));
         JMaps.addRoadGraphList(new RoadGraph(310, new Point(918,730), new ArrayList<Integer>(Arrays.asList(208, 207)),false));
         JMaps.addRoadGraphList(new RoadGraph(311, new Point(1010,897), new ArrayList<Integer>(Arrays.asList(184, 312)),false));
         JMaps.addRoadGraphList(new RoadGraph(312, new Point(1087,894), new ArrayList<Integer>(Arrays.asList(311, 313)),false));
@@ -599,7 +598,7 @@ public class RoadGraphLoader {
         JMaps.addRoadGraphList(new RoadGraph(587, new Point(2123,1475), new ArrayList<Integer>(Arrays.asList(144, 133)),false));
         JMaps.addRoadGraphList(new RoadGraph(588, new Point(2146,1645), new ArrayList<Integer>(Arrays.asList(589, 144)),false));
         JMaps.addRoadGraphList(new RoadGraph(589, new Point(2160,1726), new ArrayList<Integer>(Arrays.asList(127, 588)),false));
-        JMaps.addRoadGraphList(new RoadGraph(590, new Point(2232,1582), new ArrayList<Integer>(Arrays.asList(591, 144)),false));
+        JMaps.addRoadGraphList(new RoadGraph(590, new Point(2232,1582), new ArrayList<Integer>(Arrays.asList(591, 144)),true));
         JMaps.addRoadGraphList(new RoadGraph(591, new Point(2305,1627), new ArrayList<Integer>(Arrays.asList(592, 590)),false));
         JMaps.addRoadGraphList(new RoadGraph(592, new Point(2376,1664), new ArrayList<Integer>(Arrays.asList(78, 591)),false));
         JMaps.addRoadGraphList(new RoadGraph(593, new Point(2457,1776), new ArrayList<Integer>(Arrays.asList(78, 77)),false));
