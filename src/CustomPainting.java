@@ -1,5 +1,4 @@
-import com.sun.javafx.binding.StringFormatter;
-
+import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.GeneralPath;
@@ -13,6 +12,11 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class CustomPainting {
+    private static Image img = new ImageIcon("Flag2.png").getImage();
+
+    public static void drawFlag(Graphics2D g2, Point p){
+        g2.drawImage(img, p.x-3, p.y-img.getHeight(null), null);
+    }
     public static void paintCustomRect(Graphics2D g, Color color, Point p[]){
         GeneralPath shape = new GeneralPath();
         g.setColor(color);
@@ -28,16 +32,22 @@ public class CustomPainting {
         g.setColor(color);
         g.fill(circle);
     }
-    public static void paintVertex(Graphics2D g, Color color, Point center, int d, int name){
+    public static void paintVertex(Graphics2D g, Color color, Point center, int d, int name, boolean isImportant){
         Ellipse2D.Double circle = new Ellipse2D.Double(center.x-d/2, center.y-d/2, d, d);
-        g.setColor(color);
+        if (isImportant)
+            g.setColor(Color.GREEN);
+        else
+            g.setColor(color);
         g.fill(circle);
         g.setColor(Color.black);
         g.drawString(String.valueOf(name), center.x, center.y);
     }
-    public static void paintVertexDebug(Graphics2D g, Color color, Point center, int d, int name, ArrayList<Integer> list){
+    public static void paintVertexDebug(Graphics2D g, Color color, Point center, int d, int name, ArrayList<Integer> list, boolean isImportant){
         Ellipse2D.Double circle = new Ellipse2D.Double(center.x-d/2, center.y-d/2, d, d);
-        g.setColor(color);
+        if (isImportant)
+            g.setColor(Color.GREEN);
+        else
+            g.setColor(color);
         g.fill(circle);
         g.setColor(Color.black);
         g.drawString(String.valueOf(name), center.x, center.y);
@@ -47,7 +57,7 @@ public class CustomPainting {
             str.append(i);
         }
         if (str.length() > 0)
-        g.drawString(str.toString(), center.x + 10, center.y);
+        g.drawString(str.toString(), center.x + String.valueOf(name).length()*5, center.y);
     }
     public static void paintLine(Graphics2D g, Color color, Point begin, Point end){
         g.setColor(color);
@@ -71,7 +81,7 @@ public class CustomPainting {
         }
 
         for (RoadGraph i: list){
-            paintVertexDebug(g2, Color.red, i.getPoint(), RoadGraph.getDrawSize(), i.getNumber(), i.getList());
+            paintVertexDebug(g2, Color.red, i.getPoint(), RoadGraph.getDrawSize(), i.getNumber(), i.getList(), i.isImportant());
         }
         scrollStateChanged.stateChange();
         GUI.repaintLabel();

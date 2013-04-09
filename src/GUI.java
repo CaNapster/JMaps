@@ -10,6 +10,8 @@ public class GUI {
     private static JScrollPane scrollPane2;
     private static JFrame frame;
     private static JLabel label;
+    private static JButton startButton;
+    private static JCheckBox housesCheckBox;
     private static BufferedImage bufferedImage;
     private static Graphics2D graphics2D;
     private static ImageIcon imageIcon;
@@ -20,6 +22,8 @@ public class GUI {
             setMinimumSize(new Dimension(500, 500));
             setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             setLayout(new MigLayout("nogrid, flowy, btt"));
+            KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
+            manager.addKeyEventDispatcher(new MyKeyDispatcher());
         }};
         imageIcon = new ImageIcon(IMG_PATH);
 
@@ -28,8 +32,14 @@ public class GUI {
         layeredPane.setLocation(0, 0);
         layeredPane.setSize(frame.getSize());
         layeredPane.addComponentListener(new componentListener());
-        frame.addKeyListener(new keyListener());
         frame.add(layeredPane, "h 80%, w 100%");
+
+        startButton = new JButton("Start");
+        startButton.addActionListener(new StartButtonListener());
+        frame.add(startButton);
+
+        housesCheckBox = new JCheckBox("add houses");
+        frame.add(housesCheckBox);
 
         scrollPane1 = new JScrollPane();
         scrollPane1.setLocation(0,0);
@@ -59,6 +69,9 @@ public class GUI {
         layeredPane.add(scrollPane2,0);
 
         frame.setVisible(true);
+    }
+    public static boolean getStateOfHousesCheckBox(){
+        return housesCheckBox.isSelected();
     }
     public static void repaintMainFrame(){
         GUI.frame.repaint();
@@ -130,5 +143,10 @@ public class GUI {
     }
     public static Dimension getBufferedImageSize(){
         return new Dimension(GUI.bufferedImage.getWidth(), GUI.bufferedImage.getHeight());
+    }
+    public static void refreshControls(){
+        scrollStateChanged.stateChange();
+        repaintLabel();
+        repaintScrollPane2();
     }
 }

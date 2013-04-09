@@ -13,12 +13,39 @@ public class RoadGraph {
     private int number;
     private ArrayList<Integer> list = new ArrayList<Integer>();
     private Point point;
+    private boolean isSocket;
+    private boolean isImportant;
+    private int socketConnections;
 
     public RoadGraph(int number, Point point){
         this.number = number;
         this.point = point;
+        this.isSocket = false;
+        this.socketConnections = 0;
     }
-
+    public RoadGraph(int number, Point point, boolean important){
+        this.number = number;
+        this.point = point;
+        this.isSocket = false;
+        this.isImportant = important;
+        this.socketConnections = 0;
+    }
+    public RoadGraph(int number, Point point, ArrayList<Integer> list, boolean important){
+        this.number = number;
+        this.point = point;
+        this.list = list;
+        this.isSocket = false;
+        this.isImportant = important;
+        this.socketConnections = 0;
+    }
+    public RoadGraph(int number, Point point, ArrayList<Integer> list){
+        this.number = number;
+        this.point = point;
+        this.list = list;
+        this.isSocket = false;
+        this.isImportant = false;
+        this.socketConnections = 0;
+    }
     public void setNumber(int number){
         this.number = number;
     }
@@ -53,5 +80,26 @@ public class RoadGraph {
     }
     public static int getDrawSize(){
         return RoadGraph.drawSize;
+    }
+    public void incSocketConnetions(){
+        this.socketConnections++;
+    }
+    public void decSocketConnections() {
+        this.socketConnections--;
+    }
+    public void setSocketState(boolean state){
+        this.isSocket = state;
+    }
+    public boolean isSocket(){
+        return this.isSocket;
+    }
+    public int getSocketConnections(){
+        return this.socketConnections;
+    }
+    public boolean isImportant(){
+        return this.isImportant;
+    }
+    public void setImportant(boolean flag){
+        this.isImportant = flag;
     }
 }
