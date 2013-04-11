@@ -12,10 +12,12 @@ public class RoadGraph {
     private static int drawSize;
     private int number;
     private ArrayList<Integer> list = new ArrayList<Integer>();
+    private ArrayList<Point> houseList = new ArrayList<Point>();
     private Point point;
     private boolean isSocket;
     private boolean isImportant;
     private int socketConnections;
+    private static ArrayList<RoadGraph> removeList = new ArrayList<RoadGraph>();
 
     public RoadGraph(int number, Point point){
         this.number = number;
@@ -72,6 +74,12 @@ public class RoadGraph {
     public ArrayList<Integer> getList(){
         return this.list;
     }
+    public ArrayList<Point> getHouseList(){
+        return this.houseList;
+    }
+    public void addToHouseList(Point p){
+        this.houseList.add(p);
+    }
     public Point getPoint(){
         return this.point;
     }
@@ -101,5 +109,33 @@ public class RoadGraph {
     }
     public void setImportant(boolean flag){
         this.isImportant = flag;
+    }
+    public static void makeSimple(){
+        removeList.clear();
+        for(RoadGraph i: JMaps.getRoadGraphList()){
+            if (!i.isImportant() && !i.isSocket()){
+                int curve1, curve2;
+                curve1 = i.getList().get(0);
+                curve2 = i.getList().get(1);
+
+                for (RoadGraph k: JMaps.getRoadGraphList()){
+                    if (k.getNumber() == curve1){
+                        k.getList().remove(k.getList().indexOf(i.getNumber()));
+                        k.getList().addAll(i.getList());
+                        k.getList().remove(k.getList().indexOf(k.getNumber()));
+                    }
+                }
+                for (RoadGraph k: JMaps.getRoadGraphList()){
+                    if (k.getNumber() == curve2){
+                        k.getList().remove(k.getList().indexOf(i.getNumber()));
+                        k.getList().addAll(i.getList());
+                        k.getList().remove(k.getList().indexOf(k.getNumber()));
+                    }
+                }
+                removeList.add(i);
+            }
+        }
+        JMaps.getRoadGraphList().removeAll(removeList);
+        JMaps.getRoadGraphList().trimToSize();
     }
 }

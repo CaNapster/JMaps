@@ -7,29 +7,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba4d7596-9ef7-4042-af23-919462eed5f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RoadGraphLoader.java" afterPath="$PROJECT_DIR$/src/RoadGraphLoader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pathSearcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CustomPainting.java" afterPath="$PROJECT_DIR$/src/CustomPainting.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMaps.java" afterPath="$PROJECT_DIR$/src/JMaps.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RoadGraph.java" afterPath="$PROJECT_DIR$/src/RoadGraph.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StartButtonListener.java" afterPath="$PROJECT_DIR$/src/StartButtonListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mouseListener.java" afterPath="$PROJECT_DIR$/src/mouseListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JMaps.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365493493021" ignored="false" />
-    <file path="/fragment.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365274443034" ignored="false" />
-    <file path="/JMaps.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365498402108" ignored="false" />
+    <file path="/Dummy.txt" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365666987360" ignored="false" />
+    <file path="/fragment.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365591083586" ignored="false" />
+    <file path="/JMaps.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365501637801" ignored="false" />
     <file path="/scrollStateChanged.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364980241000" ignored="false" />
     <file path="/componentListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364979345758" ignored="false" />
     <file path="/keyListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365341869220" ignored="false" />
-    <file path="/mouseListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365492363323" ignored="false" />
-    <file path="/GUI.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365343503171" ignored="false" />
+    <file path="/mouseListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365501706109" ignored="false" />
+    <file path="/GUI.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365501478623" ignored="false" />
     <file path="/paintCustomRect.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364981866132" ignored="false" />
-    <file path="/CustomPainting.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365444720127" ignored="false" />
+    <file path="/CustomPainting.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365617201129" ignored="false" />
     <file path="/BuildingsPointer.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364990010905" ignored="false" />
-    <file path="/RoadGraph.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365445731156" ignored="false" />
+    <file path="/RoadGraph.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365587723380" ignored="false" />
     <file path="/Source" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365289225637" ignored="false" />
     <file path="/RoadGraphLoader.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365500129651" ignored="false" />
-    <file path="/StartButtonListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365499399899" ignored="false" />
+    <file path="/StartButtonListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365626701156" ignored="false" />
     <file path="/FrameKeyListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365342947376" ignored="false" />
+    <file path="/SockSearcher.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365502571457" ignored="false" />
+    <file path="/Dijkstra.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365590078328" ignored="false" />
+    <file path="/pathSearcher.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365594754233" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled/src/Dijkstra.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365590078911" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +52,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -80,7 +89,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -93,21 +101,20 @@
       <file leaf-file-name="StartButtonListener.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/StartButtonListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="53" selection-start="5391" selection-end="5391" vertical-scroll-proportion="2.0192838">
+            <state line="114" column="46" selection-start="4965" selection-end="4965" vertical-scroll-proportion="0.48946136">
               <folding>
-                <element signature="e#490#501#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1476#1487#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoadGraphLoader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RoadGraphLoader.java">
+      <file leaf-file-name="pathSearcher.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pathSearcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="600" column="124" selection-start="76252" selection-end="76252" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="176" column="0" selection-start="6724" selection-end="6724" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,7 +122,25 @@
       <file leaf-file-name="JMaps.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JMaps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="12" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0">
+            <state line="25" column="55" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoadGraph.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RoadGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="134" column="37" selection-start="4251" selection-end="4251" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomPainting.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CustomPainting.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="80" selection-start="3070" selection-end="3070" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -140,22 +165,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/scrollStateChanged.java" />
-        <option value="$PROJECT_DIR$/src/paintCustomRect.java" />
-        <option value="$PROJECT_DIR$/src/BuildingsPointer.java" />
-        <option value="$PROJECT_DIR$/src/META-INF/Source" />
         <option value="$PROJECT_DIR$/src/keyListener.java" />
         <option value="$PROJECT_DIR$/src/FrameKeyListener.java" />
         <option value="$PROJECT_DIR$/src/KeyDispatcher.java" />
         <option value="$PROJECT_DIR$/src/MyKeyDispatcher.java" />
-        <option value="$PROJECT_DIR$/src/GUI.java" />
-        <option value="$PROJECT_DIR$/src/CustomPainting.java" />
-        <option value="$PROJECT_DIR$/src/RoadGraph.java" />
         <option value="$PROJECT_DIR$/src/Source.txt" />
-        <option value="$PROJECT_DIR$/src/mouseListener.java" />
-        <option value="$PROJECT_DIR$/src/JMaps.java" />
-        <option value="$PROJECT_DIR$/src/StartButtonListener.java" />
         <option value="$PROJECT_DIR$/src/RoadGraphLoader.java" />
+        <option value="$PROJECT_DIR$/src/GUI.java" />
+        <option value="$PROJECT_DIR$/src/JMaps.java" />
+        <option value="$PROJECT_DIR$/src/mouseListener.java" />
+        <option value="$PROJECT_DIR$/src/SockSearcher.java" />
+        <option value="$PROJECT_DIR$/src/Dijkstra.java" />
+        <option value="D:/Trash/Dijkstra.java" />
+        <option value="$PROJECT_DIR$/src/RoadGraph.java" />
+        <option value="$PROJECT_DIR$/src/pathSearcher.java" />
+        <option value="$PROJECT_DIR$/src/CustomPainting.java" />
+        <option value="$PROJECT_DIR$/src/StartButtonListener.java" />
       </list>
     </option>
   </component>
@@ -205,6 +230,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -237,21 +263,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JMaps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JMaps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pathSearcher.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="154" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
-    <property name="OverrideImplement.combined" value="false" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="158" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/JMaps.java" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="154" />
@@ -266,8 +309,8 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
@@ -289,6 +332,19 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -319,19 +375,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -345,13 +388,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -373,6 +409,13 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="false" name="JMaps" type="Application" factoryName="Application">
@@ -454,7 +497,11 @@
       <created>1365493511237</created>
       <updated>1365493511237</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="SimpleGraph With Socks">
+      <created>1365500239623</created>
+      <updated>1365500239623</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -469,7 +516,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.67504185" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36683416" sideWeight="0.4939394" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998326" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1842546" sideWeight="0.38560605" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998326" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -480,8 +527,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1560606" sideWeight="0.6515913" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3484087" sideWeight="0.79545456" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1560606" sideWeight="0.7805695" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21943049" sideWeight="0.6136364" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -531,7 +578,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="RoadGraph editor" />
+    <option name="LAST_COMMIT_MESSAGE" value="SimpleGraph With Socks" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -553,6 +600,7 @@
     <MESSAGE value="Road Graph class added + CustomPainting" />
     <MESSAGE value="not important" />
     <MESSAGE value="RoadGraph editor" />
+    <MESSAGE value="SimpleGraph With Socks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -562,14 +610,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_17/src.zip!/java/awt/Point.java">
+    <entry file="file://$PROJECT_DIR$/src/RoadGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="13" selection-start="472" selection-end="472" vertical-scroll-proportion="-4.713904" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_17/src.zip!/java/awt/Component.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1999" column="25" selection-start="69171" selection-end="69171" vertical-scroll-proportion="0.05882353" />
+        <state line="129" column="49" selection-start="4009" selection-end="4009" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_17/src.zip!/java/awt/event/ComponentListener.java">
@@ -584,9 +629,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/componentListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="26" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="18" column="26" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="uml://JAVA/RoadGraph">
@@ -609,70 +652,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scrollStateChanged.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="242" selection-end="242" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
+        <state line="10" column="13" selection-start="242" selection-end="242" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyKeyDispatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="23" selection-start="627" selection-end="627" vertical-scroll-proportion="0.68237346">
-          <folding />
-        </state>
+        <state line="24" column="23" selection-start="627" selection-end="627" vertical-scroll-proportion="0.68237346" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadGraphLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="600" column="124" selection-start="76252" selection-end="76252" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="31" selection-start="2920" selection-end="2920" vertical-scroll-proportion="0.0">
+        <state line="79" column="30" selection-start="3254" selection-end="3254" vertical-scroll-proportion="0.55314535">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Trash/Dijkstra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="24" selection-start="4334" selection-end="4334" vertical-scroll-proportion="0.67250437" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RoadGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="49" selection-start="885" selection-end="976" vertical-scroll-proportion="0.0">
+        <state line="134" column="37" selection-start="4251" selection-end="4251" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CustomPainting.java">
+    <entry file="file://$PROJECT_DIR$/src/JMaps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="47" selection-start="2862" selection-end="2931" vertical-scroll-proportion="0.21017699">
+        <state line="25" column="55" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mouseListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="25" selection-start="536" selection-end="536" vertical-scroll-proportion="0.5641593">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="18" column="13" selection-start="710" selection-end="710" vertical-scroll-proportion="0.6181818" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JMaps.java">
+    <entry file="file://$PROJECT_DIR$/src/CustomPainting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="12" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0">
+        <state line="76" column="80" selection-start="3070" selection-end="3070" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoadGraphLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="600" column="124" selection-start="76252" selection-end="76252" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StartButtonListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="53" selection-start="5391" selection-end="5391" vertical-scroll-proportion="2.0192838">
+        <state line="114" column="46" selection-start="4965" selection-end="4965" vertical-scroll-proportion="0.48946136">
           <folding>
-            <element signature="e#490#501#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1476#1487#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pathSearcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="0" selection-start="6724" selection-end="6724" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>

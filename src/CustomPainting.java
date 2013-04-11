@@ -59,8 +59,9 @@ public class CustomPainting {
         if (str.length() > 0)
         g.drawString(str.toString(), center.x + String.valueOf(name).length()*5, center.y);
     }
-    public static void paintLine(Graphics2D g, Color color, Point begin, Point end){
+    public static void paintLine(Graphics2D g, Color color, Point begin, Point end, int stroke){
         g.setColor(color);
+        g.setStroke(new BasicStroke(stroke));
         g.drawLine(begin.x, begin.y, end.x, end.y);
     }
     public static void fullGraphRepaint(Graphics2D g2, ArrayList<RoadGraph> list){
@@ -73,7 +74,7 @@ public class CustomPainting {
             for (Integer j: i.getList()){
                 for (RoadGraph k: list){
                     if (k.getNumber() == j){
-                        paintLine(g2, Color.black, i.getPoint(), k.getPoint());
+                        paintLine(g2, Color.black, i.getPoint(), k.getPoint(), 1);
                         break;
                     }
                 }

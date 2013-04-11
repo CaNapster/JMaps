@@ -3,13 +3,16 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class mouseListener implements MouseListener{
-    private static int i=0;
-    private static RoadGraph vertex1;
     @Override
     public void mouseClicked(MouseEvent e){
         if (GUI.getStateOfHousesCheckBox()){
             CustomPainting.paintCircle(GUI.get2DGraphicsBufferedImage(), Color.orange, e.getPoint(), 10);
             JMaps.getHousesList().add(e.getPoint());
+            GUI.refreshControls();
+        }
+        if (GUI.getStateOfStationCheckBox()){
+            CustomPainting.paintCircle(GUI.get2DGraphicsBufferedImage(), Color.GREEN, e.getPoint(), 30);
+            JMaps.setStation(e.getPoint());
             GUI.refreshControls();
         }
     }

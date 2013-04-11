@@ -6,6 +6,7 @@ public class JMaps {
     private static ArrayList<RoadGraph> roadGraphList = new ArrayList<RoadGraph>();
     private static ArrayList<Point> houses = new ArrayList<Point>();
     private static ArrayList<RoadGraph> socketList = new ArrayList<RoadGraph>();
+    private static Point station;
 
     public static void main(String args[]){
         try {
@@ -17,6 +18,12 @@ public class JMaps {
         }
     }
 
+    public static void setStation(Point p){
+        JMaps.station = p;
+    }
+    public static Point getStation(){
+        return JMaps.station;
+    }
     public static void addRoadGraphList(RoadGraph roadGraph){
         roadGraphList.add(roadGraph);
     }

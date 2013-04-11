@@ -12,6 +12,7 @@ public class GUI {
     private static JLabel label;
     private static JButton startButton;
     private static JCheckBox housesCheckBox;
+    private static JCheckBox stationCheckBox;
     private static BufferedImage bufferedImage;
     private static Graphics2D graphics2D;
     private static ImageIcon imageIcon;
@@ -38,7 +39,9 @@ public class GUI {
         startButton.addActionListener(new StartButtonListener());
         frame.add(startButton);
 
+        stationCheckBox = new JCheckBox("add Station");
         housesCheckBox = new JCheckBox("add houses");
+        frame.add(stationCheckBox);
         frame.add(housesCheckBox);
 
         scrollPane1 = new JScrollPane();
@@ -72,6 +75,9 @@ public class GUI {
     }
     public static boolean getStateOfHousesCheckBox(){
         return housesCheckBox.isSelected();
+    }
+    public static boolean getStateOfStationCheckBox(){
+        return stationCheckBox.isSelected();
     }
     public static void repaintMainFrame(){
         GUI.frame.repaint();
