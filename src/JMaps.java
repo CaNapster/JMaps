@@ -6,13 +6,13 @@ public class JMaps {
     private static ArrayList<RoadGraph> roadGraphList = new ArrayList<RoadGraph>();
     private static ArrayList<Point> houses = new ArrayList<Point>();
     private static ArrayList<RoadGraph> socketList = new ArrayList<RoadGraph>();
-    private static Point station;
+    private static Point station = null;
 
     public static void main(String args[]){
         try {
             new GUI("JMaps");
             RoadGraphLoader.loadGraph();
-            CustomPainting.fullGraphRepaint(GUI.get2DGraphicsBufferedImage(), roadGraphList);
+            //CustomPainting.fullGraphRepaint(GUI.get2DGraphicsBufferedImage(), roadGraphList);
         } catch (Exception e) {
             System.out.println(e.toString());
         }

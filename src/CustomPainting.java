@@ -1,7 +1,10 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.GeneralPath;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -12,10 +15,13 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class CustomPainting {
-    private static Image img = new ImageIcon("Flag2.png").getImage();
-
-    public static void drawFlag(Graphics2D g2, Point p){
-        g2.drawImage(img, p.x-3, p.y-img.getHeight(null), null);
+    private static Image imgStation = new ImageIcon("Station.png").getImage();
+    private  static Image imgSplitter = new ImageIcon("Splitter.png").getImage();
+    public static void drawSplitter(Graphics2D g2, Point p){
+        g2.drawImage(imgSplitter, p.x-imgSplitter.getWidth(null)/2, p.y-imgSplitter.getHeight(null)/2, null);
+    }
+    public static void drawStation(Graphics2D g2, Point p){
+        g2.drawImage(imgStation, p.x-imgStation.getWidth(null)/2, p.y-imgStation.getHeight(null)/2, null);
     }
     public static void paintCustomRect(Graphics2D g, Color color, Point p[]){
         GeneralPath shape = new GeneralPath();
@@ -53,11 +59,11 @@ public class CustomPainting {
         g.drawString(String.valueOf(name), center.x, center.y);
         StringBuilder str = new StringBuilder("");
         for (int i: list){
-            str.append(", ");
+            str.append(",");
             str.append(i);
         }
         if (str.length() > 0)
-        g.drawString(str.toString(), center.x + String.valueOf(name).length()*5, center.y);
+        g.drawString(str.toString(), center.x + String.valueOf(name).length()*5, center.y+30);
     }
     public static void paintLine(Graphics2D g, Color color, Point begin, Point end, int stroke){
         g.setColor(color);
@@ -74,7 +80,7 @@ public class CustomPainting {
             for (Integer j: i.getList()){
                 for (RoadGraph k: list){
                     if (k.getNumber() == j){
-                        paintLine(g2, Color.black, i.getPoint(), k.getPoint(), 1);
+                        //paintLine(g2, Color.black, i.getPoint(), k.getPoint(), 1);
                         break;
                     }
                 }

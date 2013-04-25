@@ -22,6 +22,7 @@ public class pathSearcher {
     public static void setMaxSock(int value){
         pathSearcher.maxSock = value;
     }
+
     public static void searchSocks(){
         JMaps.getSocketList().clear();
         JMaps.getRoadGraphList().clear();
@@ -58,6 +59,7 @@ public class pathSearcher {
                 nearest.setSocketState(true);
                 JMaps.getSocketList().add(new RoadGraph(nearest.getNumber(), nearest.getPoint(), nearest.getList()));
                 JMaps.getSocketList().get(JMaps.getSocketList().size()-1).setSocketState(true);
+                JMaps.getSocketList().get(JMaps.getSocketList().size()-1).addHouse(arr);
                 nearestSocket = JMaps.getSocketList().get(JMaps.getSocketList().size()-1);
             } else {
 
@@ -76,6 +78,7 @@ public class pathSearcher {
                     nearest.setSocketState(true);
                     JMaps.getSocketList().add(new RoadGraph(nearest.getNumber(), nearest.getPoint(), nearest.getList()));
                     JMaps.getSocketList().get(JMaps.getSocketList().size()-1).setSocketState(true);
+                    JMaps.getSocketList().get(JMaps.getSocketList().size()-1).addHouse(arr);
                     nearestSocket = JMaps.getSocketList().get(JMaps.getSocketList().size()-1);
                 }
 
@@ -101,16 +104,36 @@ public class pathSearcher {
 
             if (dist2 <= distMult*dist){
                 nearestSocket.incSocketConnetions();
-                //CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(),Color.black, new Point(arr.x, arr.y), nearestSocket.getPoint());
+                nearestSocket.addHouse(arr);
             }
             else {
                 nearest.setSocketState(true);
                 JMaps.getSocketList().add(new RoadGraph(nearest.getNumber(), nearest.getPoint(), nearest.getList()));
                 JMaps.getSocketList().get(JMaps.getSocketList().size()-1).incSocketConnetions();
                 JMaps.getSocketList().get(JMaps.getSocketList().size()-1).setSocketState(true);
-                //CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(),Color.black, new Point(arr.x, arr.y), nearest.getPoint());
+                JMaps.getSocketList().get(JMaps.getSocketList().size()-1).addHouse(arr);
             }
         }
+    }
+
+    public static RoadGraph findNearestForStation(Point p){
+        RoadGraph nearestPoint=null;
+        double minDistance = Double.POSITIVE_INFINITY;
+        double dist;
+        for (RoadGraph i: JMaps.getRoadGraphList()){
+            dist = Math.sqrt((i.getPoint().x - p.x)*(i.getPoint().x - p.x)+(i.getPoint().y - p.y)*(i.getPoint().y - p.y));
+            if (dist < minDistance){
+                minDistance = (int)dist;
+                nearestPoint = i;
+                i.setImportant(true);
+            }
+        }
+        return nearestPoint;
+    }
+
+    public static double getCost(RoadGraph from, RoadGraph to){
+        ArrayList<Vertex> temp = getPathVertex(from, to);
+        return temp.get(0).minDistance;
     }
 
     public static ArrayList<RoadGraph> getPath(RoadGraph from, RoadGraph to){
@@ -143,7 +166,7 @@ public class pathSearcher {
                     }
                 }
 
-                double temp = (
+                long temp = (
         (rg2.getPoint().x
                 - rg.getPoint().x)
                 *
@@ -170,34 +193,109 @@ public class pathSearcher {
         }
 
 
-
-        computePaths(vertexArrayList.get(JMaps.getRoadGraphList().indexOf(from)));
+        for (int item = 0; item < JMaps.getRoadGraphList().size()-1; item++)
+            if (JMaps.getRoadGraphList().get(item).getNumber() == from.getNumber())
+        computePaths(vertexArrayList.get(item));
         List<Vertex> temppath;
 
-        temppath = getShortestPathTo(vertexArrayList.get(JMaps.getRoadGraphList().indexOf(to)));
+        for (int item = 0; item < JMaps.getRoadGraphList().size()-1; item++)
+            if (JMaps.getRoadGraphList().get(item).getNumber() == to.getNumber()) {
+                temppath = getShortestPathTo(vertexArrayList.get(item));
 
-        for (Vertex temp: temppath){
-            for (RoadGraph i: JMaps.getRoadGraphList()){
-                if (i.getNumber() == temp.name) {
-                    path.add(i);
+            for (Vertex temp: temppath){
+                for (RoadGraph i: JMaps.getRoadGraphList()){
+                    if (i.getNumber() == temp.name) {
+                        path.add(i);
+                        break;
+                    }
+                }
+            }
+            }
+            return path;
+
+    }
+
+    public static ArrayList<Vertex> getPathVertex(RoadGraph from, RoadGraph to){
+        ArrayList<RoadGraph> path = new ArrayList<RoadGraph>();
+        ArrayList<Vertex> vertexArrayList = new ArrayList<Vertex>();
+        path.clear();
+        vertexArrayList.clear();
+        Vertex vertex1;
+
+        for (RoadGraph i: JMaps.getRoadGraphList()){
+            vertex1 = new Vertex(i.getNumber());
+            vertexArrayList.add(vertex1);
+        }
+
+        for (Vertex vertexarr: vertexArrayList){
+            RoadGraph rg = null;
+            for (RoadGraph x: JMaps.getRoadGraphList()){
+                if (vertexarr.name == x.getNumber()){
+                    rg = x;
                     break;
                 }
             }
+
+            for (Integer list: rg.getList()){
+                RoadGraph rg2 = null;
+                for (RoadGraph x: JMaps.getRoadGraphList()){
+                    if (list == x.getNumber()){
+                        rg2 = x;
+                        break;
+                    }
+                }
+
+                long temp = (
+                        (rg2.getPoint().x
+                                - rg.getPoint().x)
+                                *
+                                (rg2.getPoint().x
+                                        - rg.getPoint().x)
+                                +
+                                (rg2.getPoint().y
+                                        - rg.getPoint().y)
+                                        *
+                                        (rg2.getPoint().y
+                                                - rg.getPoint().y)
+                );
+
+                Vertex rg3 = null;
+                for (Vertex x: vertexArrayList){
+                    if (list == x.name){
+                        rg3 = x;
+                        break;
+                    }
+                }
+
+                vertexarr.adjacencies.add(new Edge(rg3, temp));
+            }
         }
-        return path;
+
+        for (int item = 0; item < JMaps.getRoadGraphList().size()-1; item++)
+            if (JMaps.getRoadGraphList().get(item).getNumber() == from.getNumber())
+
+        computePaths(vertexArrayList.get(item));
+
+        Vertex ae=null;
+        for(Vertex u: vertexArrayList)
+            if (u.name == to.getNumber())
+                ae = u;
+        return getShortestPathTo(ae);
+
+
     }
 
     private static void computePaths(Vertex source)
     {
-        source.minDistance = 0.;
+        source.minDistance = 0;
         PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
         vertexQueue.add(source);
         while (!vertexQueue.isEmpty()) {
             Vertex u = vertexQueue.poll();
             for (Edge e : u.adjacencies) {
                 Vertex v = e.target;
-                double weight = e.weight;
-                double distanceThroughU = u.minDistance + weight;
+                long weight = e.weight;
+                long distanceThroughU = u.minDistance + weight;
                 if (distanceThroughU < v.minDistance) {
                     vertexQueue.remove(v);
                     v.minDistance = distanceThroughU ;
@@ -208,8 +306,8 @@ public class pathSearcher {
         }
     }
 
-    private static java.util.List<Vertex> getShortestPathTo(Vertex target){
-        java.util.List<Vertex> path = new ArrayList<Vertex>();
+    private static ArrayList<Vertex> getShortestPathTo(Vertex target){
+        ArrayList<Vertex> path = new ArrayList<Vertex>();
         for (Vertex vertex = target; vertex != null; vertex = vertex.previous)
             path.add(vertex);
 //        Collections.reverse(path);
@@ -220,7 +318,7 @@ public class pathSearcher {
 class Vertex implements Comparable<Vertex> {
     public final int name;
     public ArrayList<Edge> adjacencies = new ArrayList<Edge>();
-    public double minDistance = Double.POSITIVE_INFINITY;
+    public long minDistance = Long.MAX_VALUE;
     public Vertex previous;
     public Vertex(int argName) {
         name = argName;
@@ -231,8 +329,8 @@ class Vertex implements Comparable<Vertex> {
 }
 class Edge {
     public final Vertex target;
-    public final double weight;
-    public Edge(Vertex argTarget, double argWeight){
+    public final long weight;
+    public Edge(Vertex argTarget, long argWeight){
         target = argTarget;
         weight = argWeight;
     }

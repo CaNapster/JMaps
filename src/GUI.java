@@ -11,7 +11,10 @@ public class GUI {
     private static JFrame frame;
     private static JLabel label;
     private static JButton startButton;
+    private static JButton showButton;
+    private static JButton writeButton;
     private static JCheckBox housesCheckBox;
+    private static JProgressBar progressBar;
     private static JCheckBox stationCheckBox;
     private static BufferedImage bufferedImage;
     private static Graphics2D graphics2D;
@@ -39,10 +42,26 @@ public class GUI {
         startButton.addActionListener(new StartButtonListener());
         frame.add(startButton);
 
+        showButton = new JButton("Show me them");
+        showButton.addActionListener(new ShowButtonListener());
+        frame.add(showButton);
+
+        writeButton = new JButton("Save Image");
+        writeButton.addActionListener(new WriteButtonListener());
+        frame.add(writeButton);
+
+        progressBar = new JProgressBar();
+        progressBar.setSize(100,30);
+        progressBar.setMinimum(0);
+        progressBar.setMaximum(100);
+        progressBar.setVisible(true);
+        progressBar.setStringPainted(true);
+
         stationCheckBox = new JCheckBox("add Station");
         housesCheckBox = new JCheckBox("add houses");
         frame.add(stationCheckBox);
         frame.add(housesCheckBox);
+        frame.add(progressBar);
 
         scrollPane1 = new JScrollPane();
         scrollPane1.setLocation(0,0);
@@ -73,6 +92,13 @@ public class GUI {
 
         frame.setVisible(true);
     }
+
+    public static void setProgressBarValue(int value){
+        GUI.progressBar.setValue(value);
+    }
+    public static void updateProgressBar(){
+        GUI.progressBar.update(GUI.progressBar.getGraphics());
+    }
     public static boolean getStateOfHousesCheckBox(){
         return housesCheckBox.isSelected();
     }
@@ -94,6 +120,17 @@ public class GUI {
     public static Graphics2D get2DGraphicsBufferedImage(){
         return GUI.graphics2D;
     }
+
+    public static BufferedImage getImage(int zoomLevel){
+        double zoom = (double)zoomLevel/100;
+        BufferedImage bufferedImage1 = new BufferedImage((int)Math.round(imageIcon.getIconWidth()*zoom), (int)Math.round(imageIcon.getIconHeight()*zoom), BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = bufferedImage1.createGraphics();
+        g2.drawImage(imageIcon.getImage(), 0, 0, (int)Math.round(imageIcon.getIconWidth()*zoom), (int)Math.round(imageIcon.getIconHeight()*zoom), null);
+        g2.drawImage(bufferedImage, 0, 0, (int)Math.round(bufferedImage.getWidth()*zoom), (int)Math.round(bufferedImage.getHeight()*zoom), null);
+        g2.dispose();
+        return bufferedImage1;
+    }
+
     public static void scrollBothPaneH(String str, int delta) {
         if (str =="inc") {
             scrollPane1.getHorizontalScrollBar().setValue(scrollPane1.getHorizontalScrollBar().getValue()+delta);

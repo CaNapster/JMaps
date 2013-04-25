@@ -12,10 +12,11 @@ public class RoadGraph {
     private static int drawSize;
     private int number;
     private ArrayList<Integer> list = new ArrayList<Integer>();
-    private ArrayList<Point> houseList = new ArrayList<Point>();
+    private static ArrayList<Point> houseList = new ArrayList<Point>();
     private Point point;
     private boolean isSocket;
     private boolean isImportant;
+    private ArrayList<Point> houses = new ArrayList<Point>();
     private int socketConnections;
     private static ArrayList<RoadGraph> removeList = new ArrayList<RoadGraph>();
 
@@ -47,6 +48,12 @@ public class RoadGraph {
         this.isSocket = false;
         this.isImportant = false;
         this.socketConnections = 0;
+    }
+    public void addHouse(Point point){
+        this.houses.add(point);
+    }
+    public ArrayList<Point> getHouses(){
+        return this.houses;
     }
     public void setNumber(int number){
         this.number = number;
