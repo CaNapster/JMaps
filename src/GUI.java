@@ -1,8 +1,12 @@
 import net.miginfocom.swing.MigLayout;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class GUI {
     private static JLayeredPane layeredPane;
@@ -19,16 +23,20 @@ public class GUI {
     private static BufferedImage bufferedImage;
     private static Graphics2D graphics2D;
     private static ImageIcon imageIcon;
+    private static JLabel splitterLabel;
+    private static JLabel mainCableLabel;
+    private static JLabel secondaryCableLabel;
     private String IMG_PATH = "result.png";
 
-    public GUI(String frameName){
+    public GUI(String frameName) throws IOException {
         frame = new JFrame(frameName){{
             setMinimumSize(new Dimension(500, 500));
             setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            setLayout(new MigLayout("nogrid, flowy, btt"));
+            setLayout(new MigLayout("wrap 6, fill"));
             KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
             manager.addKeyEventDispatcher(new MyKeyDispatcher());
         }};
+
         imageIcon = new ImageIcon(IMG_PATH);
 
         layeredPane = new JLayeredPane();
@@ -36,19 +44,16 @@ public class GUI {
         layeredPane.setLocation(0, 0);
         layeredPane.setSize(frame.getSize());
         layeredPane.addComponentListener(new componentListener());
-        frame.add(layeredPane, "h 80%, w 100%");
 
         startButton = new JButton("Start");
         startButton.addActionListener(new StartButtonListener());
-        frame.add(startButton);
+
 
         showButton = new JButton("Show me them");
         showButton.addActionListener(new ShowButtonListener());
-        frame.add(showButton);
 
         writeButton = new JButton("Save Image");
         writeButton.addActionListener(new WriteButtonListener());
-        frame.add(writeButton);
 
         progressBar = new JProgressBar();
         progressBar.setSize(100,30);
@@ -59,9 +64,6 @@ public class GUI {
 
         stationCheckBox = new JCheckBox("add Station");
         housesCheckBox = new JCheckBox("add houses");
-        frame.add(stationCheckBox);
-        frame.add(housesCheckBox);
-        frame.add(progressBar);
 
         scrollPane1 = new JScrollPane();
         scrollPane1.setLocation(0,0);
@@ -90,9 +92,39 @@ public class GUI {
         layeredPane.add(scrollPane1,0);
         layeredPane.add(scrollPane2,0);
 
+        frame.add(startButton, "grow");
+        frame.add(showButton, "grow");
+        frame.add(writeButton, "grow");
+        frame.add(stationCheckBox, "center");
+        frame.add(housesCheckBox, "center");
+        frame.add(progressBar, "grow");
+
+        frame.add(layeredPane, "span, h 100%, grow, wrap");
+
+        splitterLabel = new JLabel(": none");
+        mainCableLabel = new JLabel("none");
+        secondaryCableLabel = new JLabel("none");
+
+
+        frame.add(new JLabel(new ImageIcon(ImageIO.read(new File("Splitter.png")))), "right");
+        frame.add(splitterLabel, "left");
+        frame.add(new JLabel("Волокно (синий): "), "right");
+        frame.add(mainCableLabel, "left");
+        frame.add(new JLabel("Кабель (черный): "), "right");
+        frame.add(secondaryCableLabel, "left");
+
+        frame.pack();
         frame.setVisible(true);
     }
-
+    public static void setsplitterLabel(String text){
+        GUI.splitterLabel.setText(text);
+    }
+    public static void setmainCableLabel(String text){
+        GUI.mainCableLabel.setText(text);
+    }
+    public static void setsecondaryCableLabel(String text){
+        GUI.secondaryCableLabel.setText(text);
+    }
     public static void setProgressBarValue(int value){
         GUI.progressBar.setValue(value);
     }

@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.*;
 
 public class StartButtonListener implements ActionListener {
@@ -29,7 +31,7 @@ public class StartButtonListener implements ActionListener {
 
         GUI.setProgressBarValue(0);
         double sockListSize = JMaps.getSocketList().size(), count = 1;
-            System.out.println("size " + JMaps.getSocketList().size());
+
 
         if (JMaps.getSocketList().size()!=1)
             for (RoadGraph x: JMaps.getSocketList()){
@@ -129,7 +131,21 @@ public class StartButtonListener implements ActionListener {
                 CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(), Color.BLACK, i.getPoint(), j, 3);
             CustomPainting.drawSplitter(GUI.get2DGraphicsBufferedImage(), i.getPoint());
         }
+            //BigDecimal wholeDist = BigDecimal.valueOf(0);
+            double wholeDist=0.0;
+            //0.8715
+            for (Pair pointIter: pairs){
 
-        GUI.refreshControls();
-    }                 }
+                //System.out.println(0.738*Math.sqrt((pointIter.getFirst().getPoint().x - pointIter.getSecond().getPoint().x) * (pointIter.getFirst().getPoint().x - pointIter.getSecond().getPoint().x) + (pointIter.getFirst().getPoint().y - pointIter.getSecond().getPoint().y) * (pointIter.getFirst().getPoint().y - pointIter.getSecond().getPoint().y)));
+                //wholeDist.add(BigDecimal.valueOf(0.738*Math.sqrt((pointIter.getFirst().getPoint().x - pointIter.getSecond().getPoint().x) * (pointIter.getFirst().getPoint().x - pointIter.getSecond().getPoint().x) + (pointIter.getFirst().getPoint().y - pointIter.getSecond().getPoint().y) * (pointIter.getFirst().getPoint().y - pointIter.getSecond().getPoint().y))));
+                wholeDist += 0.738*Math.sqrt((pointIter.getFirst().getPoint().x - pointIter.getSecond().getPoint().x) * (pointIter.getFirst().getPoint().x - pointIter.getSecond().getPoint().x) + (pointIter.getFirst().getPoint().y - pointIter.getSecond().getPoint().y) * (pointIter.getFirst().getPoint().y - pointIter.getSecond().getPoint().y));
+            }
+            System.out.println("whole:" + wholeDist);
+            GUI.setsplitterLabel(" : " + String.valueOf(JMaps.getSocketList().size()));
+            GUI.setmainCableLabel(String.valueOf(Math.round(wholeDist)));
+
+
+            GUI.refreshControls();
+        }
+    }
 }

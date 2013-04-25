@@ -11,7 +11,7 @@ public class mouseListener implements MouseListener{
             GUI.refreshControls();
         }
         if (GUI.getStateOfStationCheckBox()){
-            CustomPainting.paintCircle(GUI.get2DGraphicsBufferedImage(), Color.GREEN, e.getPoint(), 30);
+            //CustomPainting.paintCircle(GUI.get2DGraphicsBufferedImage(), Color.GREEN, e.getPoint(), 30);
             JMaps.setStation(e.getPoint());
             GUI.refreshControls();
         }
