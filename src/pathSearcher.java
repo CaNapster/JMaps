@@ -55,12 +55,16 @@ public class pathSearcher {
             }
 
             nearestSocket = null;
-
+            boolean flag;
             if (JMaps.getSocketList().isEmpty()) {
                 nearest.setSocketState(true);
                 JMaps.getSocketList().add(new RoadGraph(nearest.getNumber(), nearest.getPoint(), nearest.getList()));
                 JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).setSocketState(true);
-                JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).addHouseInEachSock(arr);
+                flag = false;
+                for (Point iter : JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).getHousesInEachSock())
+                    if (iter.x == arr.x && iter.y == arr.y)
+                        flag = true;
+                if (!flag) JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).addHouseInEachSock(arr);
                 nearestSocket = JMaps.getSocketList().get(JMaps.getSocketList().size() - 1);
             } else {
 
@@ -79,7 +83,11 @@ public class pathSearcher {
                     nearest.setSocketState(true);
                     JMaps.getSocketList().add(new RoadGraph(nearest.getNumber(), nearest.getPoint(), nearest.getList()));
                     JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).setSocketState(true);
-                    JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).addHouseInEachSock(arr);
+                    flag = false;
+                    for (Point iter : JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).getHousesInEachSock())
+                        if (iter.x == arr.x && iter.y == arr.y)
+                            flag = true;
+                    if (!flag) JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).addHouseInEachSock(arr);
                     nearestSocket = JMaps.getSocketList().get(JMaps.getSocketList().size() - 1);
                 }
 
@@ -105,13 +113,21 @@ public class pathSearcher {
 
             if (dist2 <= distMult * dist) {
                 nearestSocket.incSocketConnetions();
-                nearestSocket.addHouseInEachSock(arr);
+                flag = false;
+                for (Point iter : JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).getHousesInEachSock())
+                    if (iter.x == arr.x && iter.y == arr.y)
+                        flag = true;
+                if (!flag) JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).addHouseInEachSock(arr);
             } else {
                 nearest.setSocketState(true);
                 JMaps.getSocketList().add(new RoadGraph(nearest.getNumber(), nearest.getPoint(), nearest.getList()));
                 JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).incSocketConnetions();
                 JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).setSocketState(true);
-                JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).addHouseInEachSock(arr);
+                flag = false;
+                for (Point iter : JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).getHousesInEachSock())
+                    if (iter.x == arr.x && iter.y == arr.y)
+                        flag = true;
+                if (!flag) JMaps.getSocketList().get(JMaps.getSocketList().size() - 1).addHouseInEachSock(arr);
             }
         }
     }

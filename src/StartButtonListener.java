@@ -91,43 +91,31 @@ public class StartButtonListener implements ActionListener {
                 for (Point j : i.getHousesInEachSock())
                     CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(), Color.BLACK, i.getPoint(), j, 3);
                 CustomPainting.drawSplitter(GUI.get2DGraphicsBufferedImage(), i.getPoint());
-
             }
+            CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(), Color.black, base.getPoint(), JMaps.getStation(), 3);
             for (Point i : JMaps.getHousesList()) {
                 CustomPainting.paintCircle(GUI.get2DGraphicsBufferedImage(), Color.RED, new Point(i.x, i.y), 10);
             }
+            CustomPainting.drawStation(GUI.get2DGraphicsBufferedImage(), JMaps.getStation());
 
             GUI.setsplitterLabel(" : " + String.valueOf(JMaps.getSocketList().size()));
             double wholeDist = 0.0, secondDist = 0.0;
             for (Pair pointIter : finalTree) {
                 wholeDist += Math.round(0.738 * Math.sqrt((pointIter.getFirst().getPoint().x - pointIter.getSecond().getPoint().x) * (pointIter.getFirst().getPoint().x - pointIter.getSecond().getPoint().x) + (pointIter.getFirst().getPoint().y - pointIter.getSecond().getPoint().y) * (pointIter.getFirst().getPoint().y - pointIter.getSecond().getPoint().y)));
             }
-            System.out.println("whole:" + wholeDist);
             GUI.setmainCableLabel(String.valueOf(wholeDist) + "m");
 
             for (RoadGraph rgIter : JMaps.getSocketList()) {
-                for (Point pointIter : rgIter.getHousesInEachSock())
+                System.out.print(rgIter + ": ");
+                for (Point pointIter : rgIter.getHousesInEachSock()){
                     secondDist += Math.round(0.738 * Math.sqrt((rgIter.getPoint().x - pointIter.x) * (rgIter.getPoint().x - pointIter.x) + (rgIter.getPoint().y - pointIter.y) * (rgIter.getPoint().y - pointIter.y)));
+                }
             }
-            System.out.println("second:" + secondDist);
+            secondDist += Math.round(0.738 * Math.sqrt((base.getPoint().x - JMaps.getStation().x) * (base.getPoint().x - JMaps.getStation().x) + (base.getPoint().y - JMaps.getStation().y) * (base.getPoint().y - JMaps.getStation().y)));
+
             GUI.setsecondaryCableLabel(String.valueOf(secondDist) + "m");
 
             GUI.refreshControls();
         }
     }
 }
-
-
-/*
-
-for (RoadGraph i: JMaps.getSocketList()){
-    for (Point j: i.getHouses())
-        CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(), Color.BLACK, i.getPoint(), j, 3);
-    CustomPainting.drawSplitter(GUI.get2DGraphicsBufferedImage(), i.getPoint());
-
-}
-for (Point i: JMaps.getHousesList()){
-    CustomPainting.paintCircle(GUI.get2DGraphicsBufferedImage(), Color.RED, new Point(i.x,i.y), 10);
-}
-
-*/
