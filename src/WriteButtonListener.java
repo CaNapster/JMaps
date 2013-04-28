@@ -15,8 +15,10 @@ import java.io.IOException;
 public class WriteButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-        try{
+        try {
             ImageIO.write(GUI.getImage(100), "PNG", new File("Optimized.png"));
-        } catch (IOException ex) {System.out.println(ex.toString());}
+        } catch (IOException ex) {
+            System.out.println(ex.toString());
+        }
     }
 }

@@ -4,8 +4,7 @@ import java.awt.event.KeyEvent;
 public class MyKeyDispatcher implements KeyEventDispatcher {
     @Override
     public boolean dispatchKeyEvent(KeyEvent e) {
-        switch (e.getKeyCode())
-        {
+        switch (e.getKeyCode()) {
             case 37:
                 GUI.scrollBothPaneH("dec", 30);
                 break;

@@ -46,7 +46,7 @@ public class StartButtonListener implements ActionListener {
                 for (int listIter : curveIter.getList()) {
                     for (RoadGraph rgSearch : curves) {
                         if (rgSearch.getNumber() == listIter) {
-                            double tempDist = Math.round(Math.sqrt((curveIter.getPoint().x - rgSearch.getPoint().x) * (curveIter.getPoint().x - rgSearch.getPoint().x) + (curveIter.getPoint().y - rgSearch.getPoint().y) * (curveIter.getPoint().y - rgSearch.getPoint().y)));
+                            double tempDist = pathSearcher.getCost(curveIter, rgSearch);
                             edges.add(new EdgeForKruskal(curveIter.getNumber(), rgSearch.getNumber(), tempDist));
                         }
                     }
@@ -106,7 +106,6 @@ public class StartButtonListener implements ActionListener {
             GUI.setmainCableLabel(String.valueOf(wholeDist) + "m");
 
             for (RoadGraph rgIter : JMaps.getSocketList()) {
-                System.out.print(rgIter + ": ");
                 for (Point pointIter : rgIter.getHousesInEachSock()){
                     secondDist += Math.round(0.738 * Math.sqrt((rgIter.getPoint().x - pointIter.x) * (rgIter.getPoint().x - pointIter.x) + (rgIter.getPoint().y - pointIter.y) * (rgIter.getPoint().y - pointIter.y)));
                 }

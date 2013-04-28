@@ -9,14 +9,16 @@ public class Pair {
     private RoadGraph first;
     private RoadGraph second;
 
-    public Pair(RoadGraph first, RoadGraph second){
+    public Pair(RoadGraph first, RoadGraph second) {
         this.first = first;
         this.second = second;
     }
-    public RoadGraph getFirst(){
+
+    public RoadGraph getFirst() {
         return this.first;
     }
-    public RoadGraph getSecond(){
+
+    public RoadGraph getSecond() {
         return this.second;
     }
 }

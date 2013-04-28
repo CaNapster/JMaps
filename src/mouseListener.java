@@ -2,31 +2,35 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class mouseListener implements MouseListener{
+public class mouseListener implements MouseListener {
     @Override
-    public void mouseClicked(MouseEvent e){
-        if (GUI.getStateOfHousesCheckBox()){
+    public void mouseClicked(MouseEvent e) {
+        if (GUI.getStateOfHousesCheckBox()) {
             CustomPainting.paintCircle(GUI.get2DGraphicsBufferedImage(), Color.orange, e.getPoint(), 10);
             JMaps.getHousesList().add(e.getPoint());
             GUI.refreshControls();
         }
-        if (GUI.getStateOfStationCheckBox()){
+        if (GUI.getStateOfStationCheckBox()) {
             //CustomPainting.paintCircle(GUI.get2DGraphicsBufferedImage(), Color.GREEN, e.getPoint(), 30);
             JMaps.setStation(e.getPoint());
             GUI.refreshControls();
         }
     }
+
     @Override
-    public void mouseReleased(MouseEvent e){
+    public void mouseReleased(MouseEvent e) {
     }
+
     @Override
-    public void mouseExited(MouseEvent e){
+    public void mouseExited(MouseEvent e) {
     }
+
     @Override
-    public void mousePressed(MouseEvent e){
+    public void mousePressed(MouseEvent e) {
     }
+
     @Override
-    public void mouseEntered(MouseEvent e){
+    public void mouseEntered(MouseEvent e) {
 
     }
 }

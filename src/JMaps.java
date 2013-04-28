@@ -8,7 +8,7 @@ public class JMaps {
     private static ArrayList<RoadGraph> socketList = new ArrayList<RoadGraph>();
     private static Point station = null;
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
         try {
             new GUI("JMaps");
             RoadGraphLoader.loadGraph();
@@ -18,22 +18,27 @@ public class JMaps {
         }
     }
 
-    public static void setStation(Point p){
+    public static void setStation(Point p) {
         JMaps.station = p;
     }
-    public static Point getStation(){
+
+    public static Point getStation() {
         return JMaps.station;
     }
-    public static void addRoadGraphList(RoadGraph roadGraph){
+
+    public static void addRoadGraphList(RoadGraph roadGraph) {
         roadGraphList.add(roadGraph);
     }
-    public static ArrayList<RoadGraph> getRoadGraphList(){
+
+    public static ArrayList<RoadGraph> getRoadGraphList() {
         return roadGraphList;
     }
-    public static ArrayList<RoadGraph> getSocketList(){
+
+    public static ArrayList<RoadGraph> getSocketList() {
         return socketList;
     }
-    public static ArrayList<Point> getHousesList(){
+
+    public static ArrayList<Point> getHousesList() {
         return houses;
     }
 }

@@ -29,7 +29,7 @@ public class GUI {
     private String IMG_PATH = "result.png";
 
     public GUI(String frameName) throws IOException {
-        frame = new JFrame(frameName){{
+        frame = new JFrame(frameName) {{
             setMinimumSize(new Dimension(500, 500));
             setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             setLayout(new MigLayout("wrap 6, fill"));
@@ -56,7 +56,7 @@ public class GUI {
         writeButton.addActionListener(new WriteButtonListener());
 
         progressBar = new JProgressBar();
-        progressBar.setSize(100,30);
+        progressBar.setSize(100, 30);
         progressBar.setMinimum(0);
         progressBar.setMaximum(100);
         progressBar.setVisible(true);
@@ -66,14 +66,14 @@ public class GUI {
         housesCheckBox = new JCheckBox("add houses");
 
         scrollPane1 = new JScrollPane();
-        scrollPane1.setLocation(0,0);
+        scrollPane1.setLocation(0, 0);
         scrollPane1.getVerticalScrollBar().setUnitIncrement(60);
         scrollPane1.getHorizontalScrollBar().setUnitIncrement(60);
         scrollPane1.setOpaque(true);
         scrollPane1.setViewportView(new JLabel(imageIcon));
 
         scrollPane2 = new JScrollPane();
-        scrollPane2.setLocation(0,0);
+        scrollPane2.setLocation(0, 0);
         scrollPane2.getVerticalScrollBar().setUnitIncrement(60);
         scrollPane2.getHorizontalScrollBar().setUnitIncrement(60);
         scrollPane2.getViewport().setOpaque(false);
@@ -81,16 +81,16 @@ public class GUI {
         graphics2D = bufferedImage.createGraphics();
 
         label = new JLabel(new ImageIcon(bufferedImage));
-        scrollPane2.getViewport().setBackground(new Color(0,0,0,0.0f));
-        scrollPane2.setBackground(new Color(0,0,0,0.0f));
+        scrollPane2.getViewport().setBackground(new Color(0, 0, 0, 0.0f));
+        scrollPane2.setBackground(new Color(0, 0, 0, 0.0f));
         scrollPane2.getViewport().setOpaque(true);
         scrollPane2.setViewportView(label);
         scrollPane2.getViewport().addChangeListener(new scrollStateChanged());
         label.addMouseListener(new mouseListener());
-        label.setBackground(new Color(0,0,0,0.0f));
+        label.setBackground(new Color(0, 0, 0, 0.0f));
 
-        layeredPane.add(scrollPane1,0);
-        layeredPane.add(scrollPane2,0);
+        layeredPane.add(scrollPane1, 0);
+        layeredPane.add(scrollPane2, 0);
 
         frame.add(startButton, "grow");
         frame.add(showButton, "grow");
@@ -101,9 +101,9 @@ public class GUI {
 
         frame.add(layeredPane, "span, h 100%, grow, wrap");
 
-        splitterLabel = new JLabel(": none");
-        mainCableLabel = new JLabel("none");
-        secondaryCableLabel = new JLabel("none");
+        splitterLabel = new JLabel(": none      ");
+        mainCableLabel = new JLabel("none                 ");
+        secondaryCableLabel = new JLabel("none                ");
 
 
         frame.add(new JLabel(new ImageIcon(ImageIO.read(new File("Splitter.png")))), "right");
@@ -116,110 +116,134 @@ public class GUI {
         frame.pack();
         frame.setVisible(true);
     }
-    public static void setsplitterLabel(String text){
+
+    public static void setsplitterLabel(String text) {
         GUI.splitterLabel.setText(text);
     }
-    public static void setmainCableLabel(String text){
+
+    public static void setmainCableLabel(String text) {
         GUI.mainCableLabel.setText(text);
     }
-    public static void setsecondaryCableLabel(String text){
+
+    public static void setsecondaryCableLabel(String text) {
         GUI.secondaryCableLabel.setText(text);
     }
-    public static void setProgressBarValue(int value){
+
+    public static void setProgressBarValue(int value) {
         GUI.progressBar.setValue(value);
     }
-    public static void updateProgressBar(){
+
+    public static void updateProgressBar() {
         GUI.progressBar.update(GUI.progressBar.getGraphics());
     }
-    public static boolean getStateOfHousesCheckBox(){
+
+    public static boolean getStateOfHousesCheckBox() {
         return housesCheckBox.isSelected();
     }
-    public static boolean getStateOfStationCheckBox(){
+
+    public static boolean getStateOfStationCheckBox() {
         return stationCheckBox.isSelected();
     }
-    public static void repaintMainFrame(){
+
+    public static void repaintMainFrame() {
         GUI.frame.repaint();
     }
+
     public static void repaintScrollPane2() {
         scrollPane2.repaint();
     }
+
     public static void repaintScrollPane1() {
         scrollPane1.repaint();
     }
-    public static void repaintLabel(){
+
+    public static void repaintLabel() {
         GUI.label.repaint();
     }
-    public static Graphics2D get2DGraphicsBufferedImage(){
+
+    public static Graphics2D get2DGraphicsBufferedImage() {
         return GUI.graphics2D;
     }
 
-    public static BufferedImage getImage(int zoomLevel){
-        double zoom = (double)zoomLevel/100;
-        BufferedImage bufferedImage1 = new BufferedImage((int)Math.round(imageIcon.getIconWidth()*zoom), (int)Math.round(imageIcon.getIconHeight()*zoom), BufferedImage.TYPE_INT_ARGB);
+    public static BufferedImage getImage(int zoomLevel) {
+        double zoom = (double) zoomLevel / 100;
+        BufferedImage bufferedImage1 = new BufferedImage((int) Math.round(imageIcon.getIconWidth() * zoom), (int) Math.round(imageIcon.getIconHeight() * zoom), BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = bufferedImage1.createGraphics();
-        g2.drawImage(imageIcon.getImage(), 0, 0, (int)Math.round(imageIcon.getIconWidth()*zoom), (int)Math.round(imageIcon.getIconHeight()*zoom), null);
-        g2.drawImage(bufferedImage, 0, 0, (int)Math.round(bufferedImage.getWidth()*zoom), (int)Math.round(bufferedImage.getHeight()*zoom), null);
+        g2.drawImage(imageIcon.getImage(), 0, 0, (int) Math.round(imageIcon.getIconWidth() * zoom), (int) Math.round(imageIcon.getIconHeight() * zoom), null);
+        g2.drawImage(bufferedImage, 0, 0, (int) Math.round(bufferedImage.getWidth() * zoom), (int) Math.round(bufferedImage.getHeight() * zoom), null);
         g2.dispose();
         return bufferedImage1;
     }
 
     public static void scrollBothPaneH(String str, int delta) {
-        if (str =="inc") {
-            scrollPane1.getHorizontalScrollBar().setValue(scrollPane1.getHorizontalScrollBar().getValue()+delta);
-            scrollPane2.getHorizontalScrollBar().setValue(scrollPane2.getHorizontalScrollBar().getValue()+delta);
-        } else
-        if (str =="dec") {
-            scrollPane1.getHorizontalScrollBar().setValue(scrollPane1.getHorizontalScrollBar().getValue()-delta);
-            scrollPane2.getHorizontalScrollBar().setValue(scrollPane2.getHorizontalScrollBar().getValue()-delta);
+        if (str == "inc") {
+            scrollPane1.getHorizontalScrollBar().setValue(scrollPane1.getHorizontalScrollBar().getValue() + delta);
+            scrollPane2.getHorizontalScrollBar().setValue(scrollPane2.getHorizontalScrollBar().getValue() + delta);
+        } else if (str == "dec") {
+            scrollPane1.getHorizontalScrollBar().setValue(scrollPane1.getHorizontalScrollBar().getValue() - delta);
+            scrollPane2.getHorizontalScrollBar().setValue(scrollPane2.getHorizontalScrollBar().getValue() - delta);
         }
     }
+
     public static void scrollBothPaneV(String str, int delta) {
-        if (str =="inc") {
-            scrollPane1.getVerticalScrollBar().setValue(scrollPane1.getVerticalScrollBar().getValue()-delta);
-            scrollPane2.getVerticalScrollBar().setValue(scrollPane2.getVerticalScrollBar().getValue()-delta);
-        } else
-        if (str =="dec") {
-            scrollPane1.getVerticalScrollBar().setValue(scrollPane1.getVerticalScrollBar().getValue()+delta);
-            scrollPane2.getVerticalScrollBar().setValue(scrollPane2.getVerticalScrollBar().getValue()+delta);
+        if (str == "inc") {
+            scrollPane1.getVerticalScrollBar().setValue(scrollPane1.getVerticalScrollBar().getValue() - delta);
+            scrollPane2.getVerticalScrollBar().setValue(scrollPane2.getVerticalScrollBar().getValue() - delta);
+        } else if (str == "dec") {
+            scrollPane1.getVerticalScrollBar().setValue(scrollPane1.getVerticalScrollBar().getValue() + delta);
+            scrollPane2.getVerticalScrollBar().setValue(scrollPane2.getVerticalScrollBar().getValue() + delta);
         }
     }
+
     public static void setScrollPane1Size(Dimension dimension) {
         scrollPane1.setSize(dimension);
     }
+
     public static void setScrollPane2Size(Dimension dimension) {
         scrollPane2.setSize(dimension);
     }
+
     public static Dimension getLayeredPaneSize() {
         return layeredPane.getSize();
     }
+
     public static void scrollPane1SetValueHScrollBar(Integer value) {
         scrollPane1.getHorizontalScrollBar().setValue(value);
     }
+
     public static void scrollPane2SetValueHScrollBar(Integer value) {
         scrollPane2.getHorizontalScrollBar().setValue(value);
     }
+
     public static void scrollPane1SetValueVScrollBar(Integer value) {
         scrollPane1.getVerticalScrollBar().setValue(value);
     }
+
     public static void scrollPane2SetValueVScrollBar(Integer value) {
         scrollPane2.getVerticalScrollBar().setValue(value);
     }
-    public static Integer scrollPane1getValueHScrollBar(){
+
+    public static Integer scrollPane1getValueHScrollBar() {
         return scrollPane1.getHorizontalScrollBar().getValue();
     }
-    public static Integer scrollPane2getValueHScrollBar(){
+
+    public static Integer scrollPane2getValueHScrollBar() {
         return scrollPane2.getHorizontalScrollBar().getValue();
     }
-    public static Integer scrollPane1getValueVScrollBar(){
+
+    public static Integer scrollPane1getValueVScrollBar() {
         return scrollPane1.getVerticalScrollBar().getValue();
     }
-    public static Integer scrollPane2getValueVScrollBar(){
+
+    public static Integer scrollPane2getValueVScrollBar() {
         return scrollPane2.getVerticalScrollBar().getValue();
     }
-    public static Dimension getBufferedImageSize(){
+
+    public static Dimension getBufferedImageSize() {
         return new Dimension(GUI.bufferedImage.getWidth(), GUI.bufferedImage.getHeight());
     }
-    public static void refreshControls(){
+
+    public static void refreshControls() {
         scrollStateChanged.stateChange();
         repaintLabel();
         repaintScrollPane2();
