@@ -12,6 +12,8 @@ public class JMaps {
         try {
             new GUI("JMaps");
             RoadGraphLoader.loadGraph();
+            JMaps.setStation(new Point(1695,1985));
+            GUI.setStateOfFastCheckBox(true);
             //CustomPainting.fullGraphRepaint(GUI.get2DGraphicsBufferedImage(), roadGraphList);
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -29,7 +31,9 @@ public class JMaps {
     public static void addRoadGraphList(RoadGraph roadGraph) {
         roadGraphList.add(roadGraph);
     }
-
+    public static void clearRoadGraphList(){
+        roadGraphList.clear();
+    }
     public static ArrayList<RoadGraph> getRoadGraphList() {
         return roadGraphList;
     }

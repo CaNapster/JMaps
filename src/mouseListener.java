@@ -10,11 +10,6 @@ public class mouseListener implements MouseListener {
             JMaps.getHousesList().add(e.getPoint());
             GUI.refreshControls();
         }
-        if (GUI.getStateOfStationCheckBox()) {
-            //CustomPainting.paintCircle(GUI.get2DGraphicsBufferedImage(), Color.GREEN, e.getPoint(), 30);
-            JMaps.setStation(e.getPoint());
-            GUI.refreshControls();
-        }
     }
 
     @Override

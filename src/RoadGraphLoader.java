@@ -11,6 +11,7 @@ import java.util.Arrays;
  */
 public class RoadGraphLoader {
     public static void loadGraph() {
+        JMaps.clearRoadGraphList();
         RoadGraph.setDrawSize(20);
         JMaps.addRoadGraphList(new RoadGraph(0, new Point(5, 3063), new ArrayList<Integer>(Arrays.asList(548)), true));
         JMaps.addRoadGraphList(new RoadGraph(1, new Point(61, 3886), new ArrayList<Integer>(Arrays.asList(17, 2)), true));

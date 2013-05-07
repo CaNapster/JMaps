@@ -182,7 +182,7 @@ public class pathSearcher {
                     }
                 }
 
-                long temp = (
+                double temp = (
                         (rg2.getPoint().x
                                 - rg.getPoint().x)
                                 *
@@ -261,7 +261,7 @@ public class pathSearcher {
                     }
                 }
 
-                long temp = (
+                double temp = (
                         (rg2.getPoint().x
                                 - rg.getPoint().x)
                                 *
@@ -309,8 +309,8 @@ public class pathSearcher {
             Vertex u = vertexQueue.poll();
             for (Edge e : u.adjacencies) {
                 Vertex v = e.target;
-                long weight = e.weight;
-                long distanceThroughU = u.minDistance + weight;
+                double weight = e.weight;
+                double distanceThroughU = u.minDistance + weight;
                 if (distanceThroughU < v.minDistance) {
                     vertexQueue.remove(v);
                     v.minDistance = distanceThroughU;
@@ -333,7 +333,7 @@ public class pathSearcher {
 class Vertex implements Comparable<Vertex> {
     public final int name;
     public ArrayList<Edge> adjacencies = new ArrayList<Edge>();
-    public long minDistance = Long.MAX_VALUE;
+    public double minDistance = Double.POSITIVE_INFINITY;
     public Vertex previous;
 
     public Vertex(int argName) {
@@ -347,9 +347,9 @@ class Vertex implements Comparable<Vertex> {
 
 class Edge {
     public final Vertex target;
-    public final long weight;
+    public final double weight;
 
-    public Edge(Vertex argTarget, long argWeight) {
+    public Edge(Vertex argTarget, double argWeight) {
         target = argTarget;
         weight = argWeight;
     }

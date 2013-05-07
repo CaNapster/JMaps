@@ -17,9 +17,13 @@ public class GUI {
     private static JButton startButton;
     private static JButton showButton;
     private static JButton writeButton;
+
+    private static JCheckBox slowCheckBox;
+    private static JCheckBox fastCheckBox;
+
+
     private static JCheckBox housesCheckBox;
     private static JProgressBar progressBar;
-    private static JCheckBox stationCheckBox;
     private static BufferedImage bufferedImage;
     private static Graphics2D graphics2D;
     private static ImageIcon imageIcon;
@@ -62,8 +66,27 @@ public class GUI {
         progressBar.setVisible(true);
         progressBar.setStringPainted(true);
 
-        stationCheckBox = new JCheckBox("add Station");
         housesCheckBox = new JCheckBox("add houses");
+        slowCheckBox = new JCheckBox("slow");
+        slowCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (getStateOfSlowCheckBox())
+                    setStateOfFastCheckBox(false);
+                else if (!getStateOfSlowCheckBox())
+                    setStateOfFastCheckBox(true);
+            }
+        });
+        fastCheckBox = new JCheckBox("fast");
+        fastCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (getStateOfFastCheckBox())
+                    setStateOfSlowCheckBox(false);
+                else if (!getStateOfFastCheckBox())
+                    setStateOfSlowCheckBox(true);
+            }
+        });
 
         scrollPane1 = new JScrollPane();
         scrollPane1.setLocation(0, 0);
@@ -92,19 +115,25 @@ public class GUI {
         layeredPane.add(scrollPane1, 0);
         layeredPane.add(scrollPane2, 0);
 
-        frame.add(startButton, "grow");
-        frame.add(showButton, "grow");
-        frame.add(writeButton, "grow");
-        frame.add(stationCheckBox, "center");
-        frame.add(housesCheckBox, "center");
-        frame.add(progressBar, "grow");
+        frame.add(startButton, "grow, span 1 2, height ::30");
+        frame.add(showButton, "grow, span 1 2, height ::30");
+        frame.add(writeButton, "grow, span 1 2, height ::30");
+
+        frame.add(fastCheckBox, "grow, height ::15");
+        //frame.add(stationCheckBox, "center");
+
+        frame.add(housesCheckBox, "center, span 1 2, height ::30");
+        frame.add(progressBar, "grow, span 1 2, height ::30");
+
+        frame.add(slowCheckBox, "grow, height ::15");
+
+
 
         frame.add(layeredPane, "span, h 100%, grow, wrap");
 
         splitterLabel = new JLabel(": none      ");
         mainCableLabel = new JLabel("none                 ");
         secondaryCableLabel = new JLabel("none                ");
-
 
         frame.add(new JLabel(new ImageIcon(ImageIO.read(new File("Splitter.png")))), "right");
         frame.add(splitterLabel, "left");
@@ -141,8 +170,19 @@ public class GUI {
         return housesCheckBox.isSelected();
     }
 
-    public static boolean getStateOfStationCheckBox() {
-        return stationCheckBox.isSelected();
+    public static boolean getStateOfFastCheckBox() {
+        return fastCheckBox.isSelected();
+    }
+
+    public static boolean getStateOfSlowCheckBox() {
+        return slowCheckBox.isSelected();
+    }
+    public static void setStateOfFastCheckBox(boolean state) {
+        fastCheckBox.setSelected(state);
+    }
+
+    public static void setStateOfSlowCheckBox(boolean state) {
+        slowCheckBox.setSelected(state);
     }
 
     public static void repaintMainFrame() {
