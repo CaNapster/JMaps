@@ -7,13 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba4d7596-9ef7-4042-af23-919462eed5f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StartButtonListener.java" afterPath="$PROJECT_DIR$/src/StartButtonListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pathSearcher.java" afterPath="$PROJECT_DIR$/src/pathSearcher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JMaps.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367934003153" ignored="false" />
+    <file path="/Dummy.txt" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367935391330" ignored="false" />
     <file path="/fragment.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365591083586" ignored="false" />
     <file path="/JMaps.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367918775778" ignored="false" />
     <file path="/scrollStateChanged.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364980241000" ignored="false" />
@@ -623,7 +621,11 @@
       <created>1367934027212</created>
       <updated>1367934027212</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="release">
+      <created>1367935399915</created>
+      <updated>1367935399915</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -701,7 +703,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="temp with 2 algo" />
+    <option name="LAST_COMMIT_MESSAGE" value="release" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -731,6 +733,7 @@
     <MESSAGE value="basePaint" />
     <MESSAGE value="new method in filling smt" />
     <MESSAGE value="temp with 2 algo" />
+    <MESSAGE value="release" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
