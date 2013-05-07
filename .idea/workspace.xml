@@ -7,17 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba4d7596-9ef7-4042-af23-919462eed5f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMaps.java" afterPath="$PROJECT_DIR$/src/JMaps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RoadGraphLoader.java" afterPath="$PROJECT_DIR$/src/RoadGraphLoader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StartButtonListener.java" afterPath="$PROJECT_DIR$/src/StartButtonListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mouseListener.java" afterPath="$PROJECT_DIR$/src/mouseListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pathSearcher.java" afterPath="$PROJECT_DIR$/src/pathSearcher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JMaps.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367915783172" ignored="false" />
+    <file path="/Dummy.txt" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367934003153" ignored="false" />
     <file path="/fragment.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365591083586" ignored="false" />
     <file path="/JMaps.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367918775778" ignored="false" />
     <file path="/scrollStateChanged.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1364980241000" ignored="false" />
@@ -31,7 +27,7 @@
     <file path="/RoadGraph.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367083388093" ignored="false" />
     <file path="/Source" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365289225637" ignored="false" />
     <file path="/RoadGraphLoader.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367135428643" ignored="false" />
-    <file path="/StartButtonListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367919753917" ignored="false" />
+    <file path="/StartButtonListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367934421833" ignored="false" />
     <file path="/FrameKeyListener.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365342947376" ignored="false" />
     <file path="/SockSearcher.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365502571457" ignored="false" />
     <file path="/Dijkstra.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1365590078328" ignored="false" />
@@ -107,7 +103,7 @@
     <file path="$APPLICATION_HOME_DIR$/plugins/JBoss/lib/jbossIntegration.jar!/descriptors/jboss-deployment-structure-1_0.xsd" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1366894348357" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/JBoss/lib/jbossIntegration.jar!/descriptors/jboss-deployment-structure-1_1.xsd" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1366894348357" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/relaxng.rng" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1366894348358" ignored="false" />
-    <file path="/a.dummy" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367138088829" ignored="false" />
+    <file path="/a.dummy" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367934712009" ignored="false" />
     <file path="$PROJECT_DIR$/../Demo/src/Demo.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1366903760084" ignored="false" />
     <file path="$PROJECT_DIR$/../Demo/src/JMapViewer.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1366903877000" ignored="false" />
     <file path="/KruskalEdges.java" changelist="ba4d7596-9ef7-4042-af23-919462eed5f9" time="1367135668013" ignored="false" />
@@ -176,10 +172,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StartButtonListener.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="StartButtonListener.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/StartButtonListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="45" selection-start="7407" selection-end="7407" vertical-scroll-proportion="0.0">
+            <state line="260" column="0" selection-start="14743" selection-end="14743" vertical-scroll-proportion="0.6255507">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#221#232#0" expanded="true" />
@@ -220,10 +216,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pathSearcher.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pathSearcher.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pathSearcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="30" selection-start="913" selection-end="913" vertical-scroll-proportion="0.5824411">
+            <state line="109" column="35" selection-start="4588" selection-end="4588" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#6102#6113#0" expanded="true" />
+                <element signature="e#6174#6182#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoadGraph.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RoadGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="28" selection-start="1794" selection-end="1794" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -273,10 +281,10 @@
         <option value="$PROJECT_DIR$/src/RoadGraph.java" />
         <option value="$PROJECT_DIR$/src/RoadGraphLoader.java" />
         <option value="$PROJECT_DIR$/src/KruskalEdges.java" />
-        <option value="$PROJECT_DIR$/src/pathSearcher.java" />
         <option value="$PROJECT_DIR$/src/mouseListener.java" />
         <option value="$PROJECT_DIR$/src/JMaps.java" />
         <option value="$PROJECT_DIR$/src/GUI.java" />
+        <option value="$PROJECT_DIR$/src/pathSearcher.java" />
         <option value="$PROJECT_DIR$/src/StartButtonListener.java" />
       </list>
     </option>
@@ -611,7 +619,11 @@
       <created>1367127875011</created>
       <updated>1367127875011</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="temp with 2 algo">
+      <created>1367934027212</created>
+      <updated>1367934027212</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -621,6 +633,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12730318" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.83752096" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37688443" sideWeight="0.4939394" order="4" side_tool="false" content_ui="tabs" />
@@ -643,7 +656,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -689,7 +701,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="new method in filling smt" />
+    <option name="LAST_COMMIT_MESSAGE" value="temp with 2 algo" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -718,6 +730,7 @@
     <MESSAGE value="SteinerTree, kruskal + reformat" />
     <MESSAGE value="basePaint" />
     <MESSAGE value="new method in filling smt" />
+    <MESSAGE value="temp with 2 algo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -750,13 +763,6 @@
     <entry file="file://$PROJECT_DIR$/src/ShowButtonListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="78" column="55" selection-start="3496" selection-end="3496" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RoadGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="21" selection-start="1688" selection-end="1688" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RoadGraphLoader.java">
@@ -816,9 +822,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/RoadGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="28" selection-start="1794" selection-end="1794" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pathSearcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="35" selection-start="4588" selection-end="4588" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#6102#6113#0" expanded="true" />
+            <element signature="e#6174#6182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/StartButtonListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="45" selection-start="7407" selection-end="7407" vertical-scroll-proportion="0.0">
+        <state line="260" column="0" selection-start="14743" selection-end="14743" vertical-scroll-proportion="0.6255507">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#221#232#0" expanded="true" />
@@ -828,13 +851,6 @@
             <element signature="e#3116#3122#0" expanded="true" />
             <element signature="e#3612#3623#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pathSearcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="30" selection-start="913" selection-end="913" vertical-scroll-proportion="0.5824411">
-          <folding />
         </state>
       </provider>
     </entry>

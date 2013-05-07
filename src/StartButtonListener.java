@@ -149,7 +149,6 @@ public class StartButtonListener implements ActionListener {
                                 }
                             }
 
-                            RoadGraph.makeSimple();
                             curves2.clear();
 
                             ArrayList<RoadGraph> temp;
@@ -259,9 +258,6 @@ public class StartButtonListener implements ActionListener {
 
                             GUI.refreshControls();
                         
-                
-                
-                
                 ////////////////////////////////////////////////////////////////////////////////
             }
         }
