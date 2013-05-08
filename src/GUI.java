@@ -17,6 +17,8 @@ public class GUI {
     private static JButton startButton;
     private static JButton showButton;
     private static JButton writeButton;
+    private static JButton clearButton;
+    private static JButton reSockButton;
 
     private static JCheckBox slowCheckBox;
     private static JCheckBox fastCheckBox;
@@ -36,7 +38,7 @@ public class GUI {
         frame = new JFrame(frameName) {{
             setMinimumSize(new Dimension(500, 500));
             setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            setLayout(new MigLayout("wrap 6, fill"));
+            setLayout(new MigLayout("wrap 8, fill"));
             KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
             manager.addKeyEventDispatcher(new MyKeyDispatcher());
         }};
@@ -49,15 +51,34 @@ public class GUI {
         layeredPane.setSize(frame.getSize());
         layeredPane.addComponentListener(new componentListener());
 
-        startButton = new JButton("Start");
+        startButton = new JButton("Проложить");
         startButton.addActionListener(new StartButtonListener());
 
 
-        showButton = new JButton("Show me them");
+        showButton = new JButton("Просмотр");
         showButton.addActionListener(new ShowButtonListener());
 
-        writeButton = new JButton("Save Image");
+        writeButton = new JButton("Сохранить изображение");
         writeButton.addActionListener(new WriteButtonListener());
+
+        reSockButton = new JButton("Обновить сплиттеры");
+        reSockButton.addActionListener(new ReSockButtonListener());
+
+        clearButton = new JButton("Сброс");
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JMaps.clearHousesList();
+                GUI.get2DGraphicsBufferedImage().setColor(get2DGraphicsBufferedImage().getBackground());
+                GUI.get2DGraphicsBufferedImage().setComposite(AlphaComposite.getInstance(AlphaComposite.CLEAR));
+                GUI.get2DGraphicsBufferedImage().fillRect(0,0, bufferedImage.getWidth(), bufferedImage.getHeight());
+                GUI.get2DGraphicsBufferedImage().setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER));
+                GUI.setsplitterLabel("            ");
+                GUI.setsecondaryCableLabel("            ");
+                GUI.setmainCableLabel("            ");
+                GUI.refreshControls();
+            }
+        });
 
         progressBar = new JProgressBar();
         progressBar.setSize(100, 30);
@@ -66,8 +87,8 @@ public class GUI {
         progressBar.setVisible(true);
         progressBar.setStringPainted(true);
 
-        housesCheckBox = new JCheckBox("add houses");
-        slowCheckBox = new JCheckBox("slow");
+        housesCheckBox = new JCheckBox("Добавить абонента");
+        slowCheckBox = new JCheckBox("optimal");
         slowCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -118,6 +139,8 @@ public class GUI {
         frame.add(startButton, "grow, span 1 2, height ::30");
         frame.add(showButton, "grow, span 1 2, height ::30");
         frame.add(writeButton, "grow, span 1 2, height ::30");
+        frame.add(reSockButton, "grow, span 1 2, height ::30");
+        frame.add(clearButton, "grow, span 1 2, height ::30");
 
         frame.add(fastCheckBox, "grow, height ::15");
         //frame.add(stationCheckBox, "center");
@@ -127,19 +150,18 @@ public class GUI {
 
         frame.add(slowCheckBox, "grow, height ::15");
 
-
-
         frame.add(layeredPane, "span, h 100%, grow, wrap");
 
-        splitterLabel = new JLabel(": none      ");
-        mainCableLabel = new JLabel("none                 ");
-        secondaryCableLabel = new JLabel("none                ");
+        splitterLabel = new JLabel("           ");
+        mainCableLabel = new JLabel("                   ");
+        secondaryCableLabel = new JLabel("                    ");
 
-        frame.add(new JLabel(new ImageIcon(ImageIO.read(new File("Splitter.png")))), "right");
+        //frame.add(new JLabel(new ImageIcon(ImageIO.read(new File("Splitter.png")))), "right");
+        frame.add(new JLabel("Сплиттер 1х8   PS-108-А5-9В15-N:"), "right");
         frame.add(splitterLabel, "left");
-        frame.add(new JLabel("Волокно (синий): "), "right");
+        frame.add(new JLabel("ОКСНМ-10-01-0.22-8: "), "right");
         frame.add(mainCableLabel, "left");
-        frame.add(new JLabel("Кабель (черный): "), "right");
+        frame.add(new JLabel("ДОТС-П-08А: "), "right");
         frame.add(secondaryCableLabel, "left");
 
         frame.pack();

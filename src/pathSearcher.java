@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class pathSearcher {
     private static int maxSock = 8;
-    private static int distMult = 2;
+    private static double distMult = 1.5;
     private static double dist, dist2;
     private static RoadGraph nearest, nearestSocket;
     private static int minDistance;
@@ -35,23 +35,16 @@ public class pathSearcher {
 
             for (RoadGraph i: JMaps.getRoadGraphList()){
                 if (!i.isSocket()){
-                    nearest = i;
-                    break;
-                }
-            }
-
-            if (nearest == null){
-                System.out.println("No any Sockets");
-            }
-
-            for (RoadGraph i: JMaps.getRoadGraphList()){
-                if (!i.isSocket()){
                     dist = Math.sqrt((i.getPoint().x - arr.x)*(i.getPoint().x - arr.x)+(i.getPoint().y - arr.y)*(i.getPoint().y - arr.y));
                     if (dist < minDistance){
                         minDistance = (int)dist;
                         nearest = i;
                     }
                 }
+            }
+
+            if (nearest == null){
+                System.out.println("No any Sockets");
             }
 
             nearestSocket = null;
@@ -83,6 +76,7 @@ public class pathSearcher {
                     nearestSocket = JMaps.getSocketList().get(JMaps.getSocketList().size()-1);
                 }
 
+                minDistance = Integer.MAX_VALUE;
                 for (RoadGraph i: JMaps.getSocketList()){
                     dist = Math.sqrt((i.getPoint().x - arr.x)*(i.getPoint().x - arr.x)+(i.getPoint().y - arr.y)*(i.getPoint().y - arr.y));
                     if ((dist < minDistance) && (i.getSocketConnections() < maxSock)){

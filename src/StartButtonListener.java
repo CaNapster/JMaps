@@ -13,6 +13,13 @@ public class StartButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         //CustomPainting.fullGraphRepaint(GUI.get2DGraphicsBufferedImage(), JMaps.getRoadGraphList());
 
+        JMaps.clearRoadGraphList();
+        RoadGraphLoader.loadGraph();
+        JMaps.clearSocketList();
+        curves.clear();
+        curves2.clear();
+        pairs.clear();
+
         if (GUI.getStateOfSlowCheckBox()){
             if (!JMaps.getHousesList().isEmpty()) {
                 pathSearcher.searchSocks();
@@ -49,6 +56,7 @@ public class StartButtonListener implements ActionListener {
 
                 //fill edges for MST-structure
                 TreeSet<EdgeForKruskal> edges = new TreeSet<EdgeForKruskal>();
+                edges.clear();
                 for (RoadGraph curveIter : curves) {
                     for (int listIter : curveIter.getList()) {
                         for (RoadGraph rgSearch : curves) {
@@ -61,6 +69,7 @@ public class StartButtonListener implements ActionListener {
                 }
                 //MST
                 KruskalEdges vv = new KruskalEdges();
+
 
                 for (EdgeForKruskal edge : edges) {
                     vv.insertEdge(edge);
@@ -109,7 +118,7 @@ public class StartButtonListener implements ActionListener {
                 }
                 CustomPainting.drawStation(GUI.get2DGraphicsBufferedImage(), JMaps.getStation());
 
-                GUI.setsplitterLabel(" : " + String.valueOf(JMaps.getSocketList().size()));
+                GUI.setsplitterLabel(String.valueOf(JMaps.getSocketList().size()));
                 double wholeDist = 0.0, secondDist = 0.0;
                 for (Pair pointIter : finalTree) {
                     wholeDist += Math.round(0.738 * Math.sqrt((pointIter.getFirst().getPoint().x - pointIter.getSecond().getPoint().x) * (pointIter.getFirst().getPoint().x - pointIter.getSecond().getPoint().x) + (pointIter.getFirst().getPoint().y - pointIter.getSecond().getPoint().y) * (pointIter.getFirst().getPoint().y - pointIter.getSecond().getPoint().y)));
@@ -155,7 +164,7 @@ public class StartButtonListener implements ActionListener {
 
                             GUI.setProgressBarValue(0);
                             double sockListSize = JMaps.getSocketList().size(), count = 1;
-                            System.out.println("size " + JMaps.getSocketList().size());
+                            //System.out.println("size " + JMaps.getSocketList().size());
 
                             if (JMaps.getSocketList().size()!=1)
                                 for (RoadGraph x: JMaps.getSocketList()){

@@ -50,7 +50,7 @@ public class ShowButtonListener implements ActionListener {
             jSlider.setMajorTickSpacing(10);
             Hashtable labelTable = new Hashtable();
             labelTable.put(new Integer(30), new JLabel("30%"));
-            labelTable.put(new Integer(100), new JLabel("Actual Size"));
+            labelTable.put(new Integer(100), new JLabel("100%"));
             jSlider.setLabelTable(labelTable);
             jSlider.setPaintTicks(true);
             jSlider.setPaintLabels(true);

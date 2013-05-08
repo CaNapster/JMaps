@@ -41,8 +41,14 @@ public class JMaps {
     public static ArrayList<RoadGraph> getSocketList() {
         return socketList;
     }
+    public static void clearSocketList() {
+        socketList.clear();
+    }
 
     public static ArrayList<Point> getHousesList() {
         return houses;
+    }
+    public static void clearHousesList() {
+        houses.clear();
     }
 }
