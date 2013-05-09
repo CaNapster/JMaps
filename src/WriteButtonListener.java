@@ -33,6 +33,7 @@ public class WriteButtonListener implements ActionListener {
         if (result == chooser.APPROVE_OPTION){
             ImageIO.write(GUI.getImage(100), "PNG", new File(chooser.getSelectedFile()+ ".png"));
         }
+            chooser = null;
         } catch (IOException ex) {
             System.out.println(ex.toString());
         }

@@ -71,6 +71,7 @@ public class GUI {
                 GUI.setsecondaryCableLabel("            ");
                 GUI.setmainCableLabel("            ");
                 GUI.refreshControls();
+                GUI.setProgressBarValue(0);
             }
         });
 
@@ -149,7 +150,6 @@ public class GUI {
         mainCableLabel = new JLabel("                   ");
         secondaryCableLabel = new JLabel("                    ");
 
-        //frame.add(new JLabel(new ImageIcon(ImageIO.read(new File("Splitter.png")))), "right");
         frame.add(new JLabel("Сплиттер 1х8   PS-108-А5-9В15-N:"), "right");
         frame.add(splitterLabel, "left");
         frame.add(new JLabel("ОКСНМ-10-01-0.22-8: "), "right");
