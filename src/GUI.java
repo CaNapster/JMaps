@@ -18,11 +18,8 @@ public class GUI {
     private static JButton showButton;
     private static JButton writeButton;
     private static JButton clearButton;
-    private static JButton reSockButton;
-
     private static JCheckBox slowCheckBox;
     private static JCheckBox fastCheckBox;
-
 
     private static JCheckBox housesCheckBox;
     private static JProgressBar progressBar;
@@ -38,7 +35,7 @@ public class GUI {
         frame = new JFrame(frameName) {{
             setMinimumSize(new Dimension(500, 500));
             setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            setLayout(new MigLayout("wrap 8, fill"));
+            setLayout(new MigLayout("wrap 7, fill"));
             KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
             manager.addKeyEventDispatcher(new MyKeyDispatcher());
         }};
@@ -60,9 +57,6 @@ public class GUI {
 
         writeButton = new JButton("Сохранить изображение");
         writeButton.addActionListener(new WriteButtonListener());
-
-        reSockButton = new JButton("Обновить сплиттеры");
-        reSockButton.addActionListener(new ReSockButtonListener());
 
         clearButton = new JButton("Сброс");
         clearButton.addActionListener(new ActionListener() {
@@ -139,7 +133,6 @@ public class GUI {
         frame.add(startButton, "grow, span 1 2, height ::30");
         frame.add(showButton, "grow, span 1 2, height ::30");
         frame.add(writeButton, "grow, span 1 2, height ::30");
-        frame.add(reSockButton, "grow, span 1 2, height ::30");
         frame.add(clearButton, "grow, span 1 2, height ::30");
 
         frame.add(fastCheckBox, "grow, height ::15");

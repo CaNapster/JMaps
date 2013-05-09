@@ -12,7 +12,14 @@ public class StartButtonListener implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         //CustomPainting.fullGraphRepaint(GUI.get2DGraphicsBufferedImage(), JMaps.getRoadGraphList());
-
+        GUI.get2DGraphicsBufferedImage().setColor(GUI.get2DGraphicsBufferedImage().getBackground());
+        GUI.get2DGraphicsBufferedImage().setComposite(AlphaComposite.getInstance(AlphaComposite.CLEAR));
+        GUI.get2DGraphicsBufferedImage().fillRect(0,0, GUI.getBufferedImageSize().width, GUI.getBufferedImageSize().height);
+        GUI.get2DGraphicsBufferedImage().setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER));
+        GUI.setsplitterLabel("            ");
+        GUI.setsecondaryCableLabel("            ");
+        GUI.setmainCableLabel("            ");
+        GUI.refreshControls();
         JMaps.clearRoadGraphList();
         RoadGraphLoader.loadGraph();
         JMaps.clearSocketList();
@@ -103,6 +110,7 @@ public class StartButtonListener implements ActionListener {
                 }
 
 
+
                 //output
                 for (Pair pairIter : finalTree) {
                     CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(), Color.blue, pairIter.getFirst().getPoint(), pairIter.getSecond().getPoint(), 6);
@@ -142,130 +150,161 @@ public class StartButtonListener implements ActionListener {
         }
         if (GUI.getStateOfFastCheckBox()){
             if (!JMaps.getHousesList().isEmpty()) {
-                
+
                 ////////////////////////////////////////////////////////////////////////////////
 
-                            pathSearcher.searchSocks();
+                pathSearcher.searchSocks();
 
-                            double minDistance = Double.POSITIVE_INFINITY;
-                            double dist;
-                            for (RoadGraph i: JMaps.getRoadGraphList()){
+                double minDistance = Double.POSITIVE_INFINITY;
+                double dist;
+                for (RoadGraph i: JMaps.getRoadGraphList()){
+                    dist = Math.sqrt((i.getPoint().x - JMaps.getStation().x)*(i.getPoint().x - JMaps.getStation().x)+(i.getPoint().y - JMaps.getStation().y)*(i.getPoint().y - JMaps.getStation().y));
+                    if (dist < minDistance){
+                        minDistance = (int)dist;
+                        base = i;
+                        i.setImportant(true);
+                    }
+                }
+
+                curves2.clear();
+
+                ArrayList<RoadGraph> temp;
+
+                GUI.setProgressBarValue(0);
+                double sockListSize = JMaps.getSocketList().size(), count = 1;
+
+                if (JMaps.getSocketList().size()!=1)
+                    for (RoadGraph x: JMaps.getSocketList()){
+
+                        if (curves2.isEmpty()){
+
+                            RoadGraph farestSocket = JMaps.getSocketList().get(0);
+                            minDistance = 0;
+                            for (RoadGraph i: JMaps.getSocketList()){
                                 dist = Math.sqrt((i.getPoint().x - JMaps.getStation().x)*(i.getPoint().x - JMaps.getStation().x)+(i.getPoint().y - JMaps.getStation().y)*(i.getPoint().y - JMaps.getStation().y));
+                                if (dist > minDistance){
+                                    minDistance = (int)dist;
+                                    farestSocket = i;
+                                }
+                            }
+
+                            for (RoadGraph k: JMaps.getRoadGraphList())
+                                if (k.getNumber() == farestSocket.getNumber()) {
+                                    temp = pathSearcher.getPath(base, k);
+                                    curves2.addAll(temp);
+                                    for (int i2=0; i2<temp.size()-1; i2++)
+                                        pairs.add(new Pair(temp.get(i2), temp.get(i2+1)));
+                                    break;
+                                }
+                        } else {
+
+                            RoadGraph farestSocket = JMaps.getSocketList().get(0);
+                            RoadGraph nearestInTree = curves2.iterator().next();
+                            double absoluteMIN = 0;
+
+                            for (RoadGraph j: JMaps.getSocketList()){
+
+                                minDistance = Double.POSITIVE_INFINITY;
+                                for (RoadGraph i: curves2){
+                                    dist = Math.sqrt((j.getPoint().x - i.getPoint().x)*(j.getPoint().x - i.getPoint().x)+(j.getPoint().y - i.getPoint().y)*(j.getPoint().y - i.getPoint().y));
+                                    if (dist < minDistance){
+                                        minDistance = (int)dist;
+                                    }
+                                }
+
+                                if (minDistance > absoluteMIN){
+                                    absoluteMIN = minDistance;
+                                    farestSocket = j;
+                                }
+
+                            }
+
+                            minDistance = Double.POSITIVE_INFINITY;
+                            for (RoadGraph i: curves2){
+                                dist = Math.sqrt((farestSocket.getPoint().x - i.getPoint().x)*(farestSocket.getPoint().x - i.getPoint().x)+(farestSocket.getPoint().y - i.getPoint().y)*(farestSocket.getPoint().y - i.getPoint().y));
                                 if (dist < minDistance){
                                     minDistance = (int)dist;
-                                    base = i;
-                                    i.setImportant(true);
+                                    nearestInTree = i;
                                 }
                             }
-
-                            curves2.clear();
-
-                            ArrayList<RoadGraph> temp;
-
-                            GUI.setProgressBarValue(0);
-                            double sockListSize = JMaps.getSocketList().size(), count = 1;
-                            //System.out.println("size " + JMaps.getSocketList().size());
-
-                            if (JMaps.getSocketList().size()!=1)
-                                for (RoadGraph x: JMaps.getSocketList()){
-
-                                    if (curves2.isEmpty()){
-
-                                        RoadGraph farestSocket = JMaps.getSocketList().get(0);
-                                        minDistance = 0;
-                                        for (RoadGraph i: JMaps.getSocketList()){
-                                            dist = Math.sqrt((i.getPoint().x - JMaps.getStation().x)*(i.getPoint().x - JMaps.getStation().x)+(i.getPoint().y - JMaps.getStation().y)*(i.getPoint().y - JMaps.getStation().y));
-                                            if (dist > minDistance){
-                                                minDistance = (int)dist;
-                                                farestSocket = i;
-                                            }
-                                        }
-
-                                        for (RoadGraph k: JMaps.getRoadGraphList())
-                                            if (k.getNumber() == farestSocket.getNumber()) {
-                                                temp = pathSearcher.getPath(base, k);
-                                                curves2.addAll(temp);
-                                                for (int i2=0; i2<temp.size()-1; i2++)
-                                                    pairs.add(new Pair(temp.get(i2), temp.get(i2+1)));
-                                                break;
-                                            }
-                                    } else {
-
-                                        RoadGraph farestSocket = JMaps.getSocketList().get(0);
-                                        RoadGraph nearestInTree = curves2.iterator().next();
-                                        double absoluteMIN = 0;
-
-                                        for (RoadGraph j: JMaps.getSocketList()){
-
-                                            minDistance = Double.POSITIVE_INFINITY;
-                                            for (RoadGraph i: curves2){
-                                                dist = Math.sqrt((j.getPoint().x - i.getPoint().x)*(j.getPoint().x - i.getPoint().x)+(j.getPoint().y - i.getPoint().y)*(j.getPoint().y - i.getPoint().y));
-                                                if (dist < minDistance){
-                                                    minDistance = (int)dist;
-                                                }
-                                            }
-
-                                            if (minDistance > absoluteMIN){
-                                                absoluteMIN = minDistance;
-                                                farestSocket = j;
-                                            }
-
-                                        }
-
-
-
-                                        minDistance = Double.POSITIVE_INFINITY;
-                                        for (RoadGraph i: curves2){
-                                            dist = Math.sqrt((farestSocket.getPoint().x - i.getPoint().x)*(farestSocket.getPoint().x - i.getPoint().x)+(farestSocket.getPoint().y - i.getPoint().y)*(farestSocket.getPoint().y - i.getPoint().y));
-                                            if (dist < minDistance){
-                                                minDistance = (int)dist;
-                                                nearestInTree = i;
-                                            }
-                                        }
-                                        for (RoadGraph k: JMaps.getRoadGraphList())
-                                            if (k.getNumber() == farestSocket.getNumber()) {
-                                                temp = pathSearcher.getPath(nearestInTree, k);
-                                                curves2.addAll(temp);
-                                                for (int i2=0; i2<temp.size()-1; i2++)
-                                                    pairs.add(new Pair(temp.get(i2), temp.get(i2+1)));
-                                                break;
-                                            }
-                                    }
-
-                                    GUI.setProgressBarValue((int)Math.round((double)(count/sockListSize)*100));
-                                    GUI.updateProgressBar();
-                                    count++;
-
+                            for (RoadGraph k: JMaps.getRoadGraphList())
+                                if (k.getNumber() == farestSocket.getNumber()) {
+                                    temp = pathSearcher.getPath(nearestInTree, k);
+                                    curves2.addAll(temp);
+                                    for (int i2=0; i2<temp.size()-1; i2++)
+                                        pairs.add(new Pair(temp.get(i2), temp.get(i2+1)));
+                                    break;
                                 }
-                            else {
-                                for (RoadGraph i: JMaps.getSocketList())
-                                    for (RoadGraph i1: JMaps.getRoadGraphList()){
-                                        if (i.getNumber() == i1.getNumber()){
-                                            temp = pathSearcher.getPath(base, i1);
-                                            for (int i2=0; i2<temp.size()-1; i2++)
-                                                pairs.add(new Pair(temp.get(i2), temp.get(i2+1)));
-                                        }
-                                    }
-                                GUI.setProgressBarValue(100);
-                                GUI.updateProgressBar();
+                        }
+
+                        GUI.setProgressBarValue((int)Math.round((double)(count/sockListSize)*100));
+                        GUI.updateProgressBar();
+                        count++;
+
+                    }
+                else {
+                    for (RoadGraph i: JMaps.getSocketList())
+                        for (RoadGraph i1: JMaps.getRoadGraphList()){
+                            if (i.getNumber() == i1.getNumber()){
+                                temp = pathSearcher.getPath(base, i1);
+                                for (int i2=0; i2<temp.size()-1; i2++)
+                                    pairs.add(new Pair(temp.get(i2), temp.get(i2+1)));
                             }
+                        }
+                    GUI.setProgressBarValue(100);
+                    GUI.updateProgressBar();
+                }
 
 
-                            for(Pair pairIter: pairs)
-                                CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(), Color.blue, pairIter.getFirst().getPoint(), pairIter.getSecond().getPoint(), 6);
+                for(Pair pairIter: pairs){
+                    CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(), Color.blue, pairIter.getFirst().getPoint(), pairIter.getSecond().getPoint(), 6);
+                }
 
-                            CustomPainting.drawStation(GUI.get2DGraphicsBufferedImage(), base.getPoint());
+                CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(), Color.black, base.getPoint(), JMaps.getStation(), 3);
+                CustomPainting.drawStation(GUI.get2DGraphicsBufferedImage(), JMaps.getStation());
 
-                            for (Point i: JMaps.getHousesList()){
-                                CustomPainting.paintCircle(GUI.get2DGraphicsBufferedImage(), Color.RED, new Point(i.x,i.y), 10);
-                            }
-                            for (RoadGraph i: JMaps.getSocketList()){
-                                for (Point j: i.getHousesInEachSock())
-                                    CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(), Color.BLACK, i.getPoint(), j, 3);
-                                CustomPainting.drawSplitter(GUI.get2DGraphicsBufferedImage(), i.getPoint());
-                            }
+                for (Point i: JMaps.getHousesList()){
+                    CustomPainting.paintCircle(GUI.get2DGraphicsBufferedImage(), Color.RED, new Point(i.x, i.y), 10);
+                }
 
-                            GUI.refreshControls();
+                for (RoadGraph i: JMaps.getSocketList()){
+                    for (Point j: i.getHousesInEachSock()) {
+                        CustomPainting.paintLine(GUI.get2DGraphicsBufferedImage(), Color.BLACK, i.getPoint(), j, 3);
+                    }
+
+                    CustomPainting.drawSplitter(GUI.get2DGraphicsBufferedImage(), i.getPoint());
+                }
+
+                boolean flag;
+                ArrayList<Pair> tempCable = new ArrayList<Pair>();
+                for(Pair pairIter: pairs){
+                    flag = false;
+                    for (Pair pairIter2: tempCable){
+                        if (pairIter.getFirst() == pairIter2.getFirst() && pairIter.getSecond() == pairIter2.getSecond()) {
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if (!flag) tempCable.add(pairIter);
+                }
+                double wholeDist = 0.0, secondDist = 0.0;
+                for (Pair pointIter : tempCable) {
+                    wholeDist += Math.round(0.738 * Math.sqrt((pointIter.getFirst().getPoint().x - pointIter.getSecond().getPoint().x) * (pointIter.getFirst().getPoint().x - pointIter.getSecond().getPoint().x) + (pointIter.getFirst().getPoint().y - pointIter.getSecond().getPoint().y) * (pointIter.getFirst().getPoint().y - pointIter.getSecond().getPoint().y)));
+                }
+                GUI.setmainCableLabel(String.valueOf(wholeDist) + "m");
+                GUI.setsplitterLabel(String.valueOf(JMaps.getSocketList().size()));
+
+                for (RoadGraph rgIter : JMaps.getSocketList()) {
+                    for (Point pointIter : rgIter.getHousesInEachSock()){
+                        secondDist += Math.round(0.738 * Math.sqrt((rgIter.getPoint().x - pointIter.x) * (rgIter.getPoint().x - pointIter.x) + (rgIter.getPoint().y - pointIter.y) * (rgIter.getPoint().y - pointIter.y)));
+                    }
+                }
+                secondDist += Math.round(0.738 * Math.sqrt((base.getPoint().x - JMaps.getStation().x) * (base.getPoint().x - JMaps.getStation().x) + (base.getPoint().y - JMaps.getStation().y) * (base.getPoint().y - JMaps.getStation().y)));
+
+                GUI.setsecondaryCableLabel(String.valueOf(secondDist) + "m");
+
+
+                GUI.refreshControls();
                         
                 ////////////////////////////////////////////////////////////////////////////////
             }
